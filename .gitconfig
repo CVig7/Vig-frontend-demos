@@ -1,0 +1,15 @@
+[core]
+	editor = \"C:\\Users\\cordk\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[user]
+	name = Cord Vigil
+	email = cv86096@email.vccs.edu
+	signingkey = C:\\Users\\cordk\\.ssh\\git-auth-sign-keys
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
