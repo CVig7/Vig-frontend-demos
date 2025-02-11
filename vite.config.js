@@ -10,7 +10,7 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'index.html'),
                 CC: resolve(__dirname, 'CC/index.html'),
-                
+                RPG: resolve(__dirname, 'RPG/index.html'),
             }
         }
     }
