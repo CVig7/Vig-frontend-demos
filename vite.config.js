@@ -5,7 +5,7 @@ import { resolve } from 'path';
 export default defineConfig({
     base: "/Vig-pages/",
     build: {
-        outDir: 'docs',
+        outDir: "docs",
         rollupOptions : {
             input: {
                 main: resolve(__dirname, 'index.html'),
