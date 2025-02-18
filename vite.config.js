@@ -12,6 +12,7 @@ export default defineConfig({
                 CC: resolve(__dirname, 'CC/index.html'),
                 RPG: resolve(__dirname, 'RPG/index.html'),
                 MP: resolve(__dirname, 'MP/index.html'),
+                PC: resolve(__dirname, 'PC/index.html'),
             }
         }
     }
