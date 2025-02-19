@@ -3,7 +3,7 @@ import{ defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-    base: "/Vig-pages/RPG/",
+    base: "/Vig-pages/PC/",
     build: {
         outDir: "docs",
         rollupOptions : {
@@ -17,4 +17,4 @@ export default defineConfig({
         }
     }
 });
-        
+   

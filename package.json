@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^0.10.3"
+    "vite": "^6.1.0"
   },
   "dependencies": {
     "lodash": "^4.17.21"
