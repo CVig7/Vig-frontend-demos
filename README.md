@@ -1,4 +1,4 @@
-Vig-Pages
+Vig-Demos
 
 Overview
 
