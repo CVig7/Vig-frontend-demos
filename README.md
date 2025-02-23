@@ -14,7 +14,7 @@ A Palindrome Checker (PC)
 
 Features
 
-🎨 Random Color Changer
+🎨 Random Color Changer (CC)
 
 A fun page that dynamically changes the background color to a randomly generated hue with each click.
 
