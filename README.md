@@ -2,7 +2,7 @@ Vig-Demos
 
 Overview
 
-Vig-Pages is a multipage website featuring a collection of interactive tools and entertainment modules, including:
+Vig-Demos is a multipage website featuring a collection of interactive tools and entertainment modules, including:
 
 A Random Color Changer 
 
