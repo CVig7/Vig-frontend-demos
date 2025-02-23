@@ -4,7 +4,7 @@ Overview
 
 Vig-Demos is a multipage website featuring a collection of interactive tools and entertainment modules, including:
 
-A Random Color Changer 
+A Random Color Changer (CC)
 
 A Role-Playing Game (RPG)
 
