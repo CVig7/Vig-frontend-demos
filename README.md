@@ -26,7 +26,7 @@ An interactive game where players embark on a thrilling adventure, battling enem
 
 A sleek and intuitive music player that allows users to play, pause, and navigate through a list of pre-made tracks.
 
-🔄 Palindrome Checker
+🔄 Palindrome Checker (PC)
 
 A simple utility to check whether a given word or phrase is a palindrome (reads the same forward and backward).
 
