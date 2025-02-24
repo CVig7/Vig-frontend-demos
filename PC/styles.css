@@ -15,3 +15,13 @@ body {
   color: var(--white);
   text-align: center;
 }
+
+nav a {
+  color: blue; /* Sets the text color of links */
+  text-decoration: none; /* Optional: Remove underline from the link */
+}
+
+p a {
+  color: blue; /* Set the color of the link inside the paragraph */
+  text-decoration: none; /* Optional: Remove underline from the link */
+}

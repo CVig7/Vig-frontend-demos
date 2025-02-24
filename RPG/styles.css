@@ -57,3 +57,13 @@ body {
     background-image: linear-gradient(#fecc4c, #ffac33);
     border: 3px solid #feac32;
   }
+
+  nav a {
+    color: blue; /* Sets the text color of links */
+    text-decoration: none; /* Optional: Remove underline from the link */
+  }
+  
+  p a {
+    color: blue; /* Set the color of the link inside the paragraph */
+    text-decoration: none; /* Optional: Remove underline from the link */
+  }
