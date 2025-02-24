@@ -1,8 +1,8 @@
-Vig-Demos
+Vig-frontend-demos
 
 Overview
 
-Vig-Demos is a multipage website featuring a collection of interactive tools and entertainment modules, including:
+Vig-frontend-demos is a multipage website featuring a collection of interactive tools and entertainment modules, including:
 
 A Random Color Changer (CC)
 
