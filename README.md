@@ -20,11 +20,11 @@ A fun page that dynamically changes the background color to a randomly generated
 
 🏹 Role-Playing Game (RPG)
 
-An interactive game where players embark on a thrilling adventure, battling enemies, leveling up, and making strategic decisions.
+An interactive game where players embark on a thrilling adventure, battling enemies, and making strategic decisions to beat the dragon.
 
 🎵 Music Player (MP)
 
-A sleek and intuitive music player that allows users to play, pause, and navigate through a list of pre-made tracks.
+A sleek and intuitive music player that allows users to play, pause, and navigate through a list of pre-made tracks from freeCodeCamp.
 
 🔄 Palindrome Checker (PC)
 
