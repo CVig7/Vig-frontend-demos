@@ -1,3 +1,17 @@
-head {
-    background-color: #75767A;
-  }
+:root {
+  --yellow: #f1be32;
+  --golden-yellow: #feac32;
+  --dark-purple: #110815;
+  --light-grey: #efefef;
+  --dark-grey: #333;
+  --light-purple: #3f3d56;
+  --light-blue: #3f51b5;
+  --white: #fff;
+  --medium-grey: #75767b;
+}
+
+body {
+  background-color: var(--medium-grey);
+  color: var(--white);
+  text-align: center;
+}
