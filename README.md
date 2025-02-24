@@ -12,6 +12,8 @@ A Music Player (MP)
 
 A Palindrome Checker (PC)
 
+A Roman Numeral Converter (RNC)
+
 Features
 
 🎨 Random Color Changer (CC)
@@ -29,6 +31,10 @@ A sleek and intuitive music player that allows users to play, pause, and navigat
 🔄 Palindrome Checker (PC)
 
 A simple utility to check whether a given word or phrase is a palindrome (reads the same forward and backward).
+
+🔢 Roman Numeral Converter (RNC) 
+
+A simple program that converts numbers 1-1,000 into Roman numerals. Supports input validation and accurate conversions.
 
 Credit & Technologies Used
 
