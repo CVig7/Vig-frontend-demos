@@ -34,3 +34,12 @@ p a {
   color: blue; /* Set the color of the link inside the paragraph */
   text-decoration: none; /* Optional: Remove underline from the link */
 }
+
+p a:hover {
+  color: green; /* Change the color when hovering over the link */
+}
+
+/* Active effect when link is clicked */
+p a:active {
+  color: red; /* Change the color when the link is clicked */
+}
