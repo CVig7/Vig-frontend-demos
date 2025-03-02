@@ -3,7 +3,7 @@
   --golden-yellow: #feac32;
   --dark-purple: #110815;
   --light-grey: #efefef;
-  --dark-grey: #333;
+  --dark-grey: #2c2c2e;
   --light-purple: #3f3d56;
   --light-blue: #3f51b5;
   --white: #fff;
@@ -11,7 +11,7 @@
 }
 
 body {
-  background-color: var(--medium-grey);
+  background-color: var(--dark-grey);
   color: var(--white);
   text-align: center;
 }

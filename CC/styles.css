@@ -16,10 +16,11 @@
   --light-blue: #3f51b5;
   --white: #fff;
   --medium-grey: #75767b;
+  --darker-grey: #2c2c2e;
 }
 
 body {
-  background-color: var(--medium-grey);
+  background-color: var(--darker-grey);
   color: var(--white);
   text-align: center;
 }
