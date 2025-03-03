@@ -85,3 +85,6 @@ body {
   p a:active {
     color: red; /* Change the color when the link is clicked */
   }
+  h1 {
+    font-size: 2em;
+  }
