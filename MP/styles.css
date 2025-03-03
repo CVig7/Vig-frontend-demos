@@ -370,26 +370,26 @@
   }
 
   nav a {
-    color: blue; /* Sets the text color of links */
+    color: #a66cff; /* Sets the text color of links */
     
   }
   
   nav a:hover {
-    color: green; /* Change the color when hovering over the link */
+    color: #f4a261; /* Change the color when hovering over the link */
   }
-
+  
   /* Active effect when link is clicked */
   nav a:active {
     color: red; /* Change the color when the link is clicked */
   }
-
+  
   p a {
-    color: blue; /* Set the color of the link inside the paragraph */
+    color: #a66cff; /* Set the color of the link inside the paragraph */
     text-decoration: none; /* Optional: Remove underline from the link */
   }
 
   p a:hover {
-    color: green; /* Change the color when hovering over the link */
+    color: #f4a261; /* Change the color when hovering over the link */
   }
   
   /* Active effect when link is clicked */
