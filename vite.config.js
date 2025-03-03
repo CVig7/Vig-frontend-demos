@@ -14,6 +14,7 @@ export default defineConfig({
                 MP: resolve(__dirname, 'MP/index.html'),
                 PC: resolve(__dirname, 'PC/index.html'),
                 RNC: resolve(__dirname, 'RNC/index.html'),
+                TNV: resolve(__dirname, 'TNV/index.html'),
             }
         }
     }
