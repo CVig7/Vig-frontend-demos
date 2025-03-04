@@ -46,3 +46,24 @@
   h1 {
     font-size: 2em;
   }
+
+  nav ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex;      /* Flexbox layout */
+    justify-content: center;  
+    gap: 20px;          
+  }
+  
+  nav li {
+    margin: 0;   
+    padding: 0;  
+  }
+  
+  footer {
+    padding-top: 20px;
+  }
+  nav {
+    margin-top: 30px;  
+}

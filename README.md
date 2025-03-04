@@ -14,6 +14,8 @@ A Palindrome Checker (PC)
 
 A Roman Numeral Converter (RNC)
 
+A Telephone Number Validator (TNV)
+
 Features
 
 🎨 Random Color Changer (CC)
@@ -35,6 +37,10 @@ A simple utility to check whether a given word or phrase is a palindrome (reads 
 🔢 Roman Numeral Converter (RNC) 
 
 A simple program that converts numbers 1-1,000 into Roman numerals. Supports input validation and accurate conversions.
+
+📞 Telephone Number Validator (TNV)
+
+A program that checks if a given number matches the format of a valid US phone number using regular expressions.
 
 Credit & Technologies Used
 
