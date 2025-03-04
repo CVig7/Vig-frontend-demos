@@ -8,7 +8,7 @@
     <h1>Role Playing Game</h1>
     
   </head>
-  <body>
+  <body style="opacity: 0; animation: fadeIn 0.5s ease-in-out forwards;">
     <div id="game">
       <div id="stats">
         <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
@@ -39,6 +39,11 @@
         <li><a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a></li>
       </ul>
     </nav>
+    <style>
+      @keyframes fadeIn {
+          to { opacity: 1; }
+      }
+      </style>
   </body>
   <footer>
     <p>A  portion of the Role Playing Game's code is from <a href="https://www.freecodecamp.org/learn">freecodecamp</a></p>

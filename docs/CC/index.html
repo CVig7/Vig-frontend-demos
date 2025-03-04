@@ -11,7 +11,7 @@
     <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/modulepreload-polyfill-B5Qt9EMX.js">
     <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/CC-D3TJ6pMg.css">
   </head>
-  <body>
+  <body style="opacity: 0; animation: fadeIn 0.5s ease-in-out forwards;">
     <main>
       <section class="bg-information-container">
         <p>Hex Code: <span id="bg-hex-code">#110815</span></p>
@@ -29,6 +29,11 @@
         <li><a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a></li>
       </ul>
     </nav>
+    <style>
+      @keyframes fadeIn {
+          to { opacity: 1; }
+      }
+      </style>
   </body>
   <footer>
     <p>A  portion of the Color Changer code is from <a href="https://www.freecodecamp.org/learn">freecodecamp</a></p>
