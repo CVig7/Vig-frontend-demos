@@ -29,7 +29,7 @@
   
   /* Active effect when link is clicked */
   nav a:active {
-    color: red; /* Change the color when the link is clicked */
+    color: red
   }
   
   p a {
@@ -43,7 +43,7 @@
   
   /* Active effect when link is clicked */
   p a:active {
-    color: red; /* Change the color when the link is clicked */
+    color: red
   }
   h1 {
     font-size: 2em;
