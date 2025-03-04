@@ -27,6 +27,8 @@
     color: var(--primary-color);
     font-family: var(--font-family);
     text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in-out forwards;
   }
   
   h1 {
@@ -422,4 +424,9 @@ html, body {
   color: #f0f0f5;
   margin: 0;
   padding: 0;
+}
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+  }
 }

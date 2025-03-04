@@ -11,6 +11,8 @@
     background-color: var(--medium-grey);
     color: var(--white);
     text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in-out forwards;
   }
   
   nav a {
@@ -69,4 +71,9 @@
     color: #f0f0f5;
     margin: 0;
     padding: 0;
+  }
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
   }
