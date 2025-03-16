@@ -48,7 +48,7 @@ body {
 }
 
 nav a {
-  color: #E0b7ff; /* Sets the text color of links */
+  color: #c8a2ff; /* Sets the text color of links */
   
 }
 
@@ -62,7 +62,7 @@ nav a:active {
 }
 
 p a {
-  color: #e0b7ff; /* Set the color of the link inside the paragraph */
+  color: #c8a2ff; /* Set the color of the link inside the paragraph */
   text-decoration: none; /* Optional: Remove underline from the link */
 }
 
