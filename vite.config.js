@@ -15,6 +15,7 @@ export default defineConfig({
                 PC: resolve(__dirname, 'PC/index.html'),
                 RNC: resolve(__dirname, 'RNC/index.html'),
                 TNV: resolve(__dirname, 'TNV/index.html'),
+                VW: resolve(__dirname, 'VW/index.html'),
             }
         }
     }
