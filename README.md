@@ -16,6 +16,8 @@ A Roman Numeral Converter (RNC)
 
 A Telephone Number Validator (TNV)
 
+Viggy's World (VW)
+
 Features
 
 🎨 Random Color Changer (CC)
@@ -42,6 +44,10 @@ A simple program that converts numbers 1-1,000 into Roman numerals. Supports inp
 
 A program that checks if a given number matches the format of a valid US phone number using regular expressions.
 
+🌍 Viggy’s World (VW)
+
+A vibrant platformer and endless runner where players jump, dash, and navigate floating platforms to reach golden checkpoints.
+
 Credit & Technologies Used
 
 HTML, CSS, JavaScript for front-end development
@@ -50,7 +56,9 @@ LocalStorage for saving game progress in the RPG
 
 JavaScript Audio API for the Music Player
 
+Canvas API for Viggy's World
+
 Portions of the code for the Random Color Changer, Music Player, and RPG were provided by freeCodeCamp.
 
-Developed with ❤️ by Cord Vigil
+Developed with ❤️ by Cord Vigil • 2025
 
