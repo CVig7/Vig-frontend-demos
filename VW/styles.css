@@ -1,170 +1,188 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  :root {
-    --main-bg-color: #0f0f3d;
-    --section-bg-color: #1f1f5c;
-    --highlight-color: #ff4081;
-    --button-gradient-start: #ff6ec4;
-    --button-gradient-end: #7873f5;
-    --text-color: #f0f0f0;
-  
-    --light-grey: #efefef;
-    --dark-grey: #333;
-    --light-purple: #3f3d56;
-    --light-blue: #3f51b5;
-    --white: #fff;
-    --medium-grey: #2c2c2e;
-  }
-  
-  body {
-    background-color: var(--medium-grey);
-    color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    opacity: 0;
-    animation: fadeIn 0.5s ease-in-out forwards;
-  }
-  
-  nav a {
-    color: #ccadf9;
-  }
-  
-  nav a:hover {
-    color: #f4a261;
-  }
-  
-  nav a:active {
-    color: red;
-  }
-  
-  p a {
-    color: #ccadf9;
-    text-decoration: none;
-  }
-  
-  p a:hover {
-    color: #f4a261;
-  }
-  
-  p a:active {
-    color: red;
-  }
-  
-  h1 {
-    font-size: 2em;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  nav li {
-    margin: 0;
-    padding: 0;
-  }
-  
-  footer {
-    padding-top: 20px;
-    color: #ffffff;
-  }
-  
-  nav {
-    margin-top: 30px;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: #0f0f3d;
+  --section-bg-color: #1f1f5c;
+  --highlight-color: #ff4081;
+  --button-gradient-start: #ff6ec4;
+  --button-gradient-end: #7873f5;
+  --text-color: #f0f0f0;
+
+  --light-grey: #efefef;
+  --dark-grey: #333;
+  --light-purple: #3f3d56;
+  --light-blue: #3f51b5;
+  --white: #fff;
+  --medium-grey: #2c2c2e;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--medium-grey);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav a {
+  color: #ccadf9;
+}
+
+nav a:hover {
+  color: #f4a261;
+}
+
+nav a:active {
+  color: red;
+}
+
+p a {
+  color: #ccadf9;
+  text-decoration: none;
+}
+
+p a:hover {
+  color: #f4a261;
+}
+
+p a:active {
+  color: red;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav li {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  padding-top: 20px;
+  color: #ffffff;
+}
+
+nav {
+  margin-top: 30px;
+}
+
+.game-intro-screen {
+  background-color: var(--section-bg-color);
+  width: 100%;
+  max-width: 700px;
+  border-radius: 30px;
+  padding: 30px 20px 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  margin: 40px auto;
+}
+
+.game-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--highlight-color);
+}
+
+.game-instructions {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 15px;
+  line-height: 2rem;
+  color: var(--text-color);
+}
+
+.game-button {
+  cursor: pointer;
+  width: 140px;
+  margin: 10px;
+  font-size: 18px;
+  color: #fff;
+  background-image: linear-gradient(var(--button-gradient-start), var(--button-gradient-end));
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.game-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--highlight-color);
+}
+
+.button-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkpoint-message-screen {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  background-color: var(--section-bg-color);
+  border-radius: 20px;
+  padding: 15px;
+  display: none;
+  box-shadow: 0 0 15px rgba(255, 64, 129, 0.4);
+  color: var(--highlight-color);
+}
+
+#game-canvas {
+  display: none;
+  position: absolute;
+  top: 100px; /* offset to avoid overlapping nav/title */
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 100px);
+  z-index: -1;
+}
+
+@media (min-width: 768px) {
   .game-intro-screen {
-    background-color: var(--section-bg-color);
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 30px;
-    padding: 30px 20px 10px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    width: 60%;
+    max-width: 700px;
   }
-  
-  .game-title {
-    text-align: center;
-    font-size: 2rem;
-    color: var(--highlight-color);
-  }
-  
-  .game-instructions {
-    text-align: center;
-    font-size: 1.2rem;
-    margin: 15px;
-    line-height: 2rem;
-    color: var(--text-color);
-  }
-  
-  .game-button {
-    cursor: pointer;
-    width: 140px;
-    margin: 10px;
-    font-size: 18px;
-    color: #fff;
-    background-image: linear-gradient(var(--button-gradient-start), var(--button-gradient-end));
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  .game-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px var(--highlight-color);
-  }
-  
-  .button-holder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+
   .checkpoint-message-screen {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 100%;
-    max-width: 350px;
-    text-align: center;
-    background-color: var(--section-bg-color);
-    border-radius: 20px;
-    padding: 15px;
-    display: none;
-    box-shadow: 0 0 15px rgba(255, 64, 129, 0.4);
-    color: var(--highlight-color);
+    max-width: 300px;
   }
-  
-  #game-canvas {
-    display: none;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
-  
-  @media (min-width: 768px) {
-    .game-intro-screen {
-      width: 60%;
-      max-width: 700px;
-    }
-  
-    .checkpoint-message-screen {
-      max-width: 300px;
-    }
-  }
-  
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-  
+}
