@@ -35,6 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  justify-content: center;
 }
 
 main {
@@ -88,7 +89,8 @@ nav li {
 }
 
 footer {
-  padding-top: 20px;
+  margin-top: auto;
+  padding: 10px 0 50px;
   color: #ffffff;
 }
 
@@ -103,7 +105,7 @@ nav {
   border-radius: 30px;
   padding: 30px 20px 10px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-  margin: 40px auto;
+  margin: auto;
 }
 
 .game-title {
@@ -145,10 +147,10 @@ nav {
 }
 
 .checkpoint-message-screen {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   max-width: 350px;
   text-align: center;
@@ -158,12 +160,13 @@ nav {
   display: none;
   box-shadow: 0 0 15px rgba(255, 64, 129, 0.4);
   color: var(--highlight-color);
+  z-index: 10;
 }
 
 #game-canvas {
   display: none;
   position: absolute;
-  top: 100px; /* offset to avoid overlapping nav/title */
+  top: 100px;
   left: 0;
   width: 100vw;
   height: calc(100vh - 100px);

@@ -2,7 +2,8 @@ const input = document.getElementById("number")
 const convertBtn = document.getElementById("convert-btn")
 const output = document.getElementById("output")
 
-convertBtn.addEventListener("click", () => {
+convertBtn.addEventListener("click", (e) => {
+  e.preventDefault();
   const number = +input.value
   if (!number) {
     output.innerText = "Please enter a valid number";

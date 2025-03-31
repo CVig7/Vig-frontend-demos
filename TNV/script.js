@@ -3,9 +3,14 @@ const checkBtn = document.getElementById("check-btn");
 const clearBtn = document.getElementById("clear-btn");
 const resultsDiv = document.getElementById("results-div");
 
-clearBtn.addEventListener("click", () => resultsDiv.innerText = "");
+clearBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    resultsDiv.innerText = "";
+    
+});
 
-checkBtn.addEventListener("click", () => {
+checkBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     const regex = /^(1\s?)?(\(\d{3}\)|\d{3})([\s-]?)\d{3}([\s-]?)\d{4}$/;
 
     if (!userInput.value) {

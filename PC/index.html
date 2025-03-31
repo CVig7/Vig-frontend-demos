@@ -18,10 +18,6 @@
   </style>
   </head>
   <body style="opacity: 0; animation: fadeIn 0.5s ease-in-out forwards;">
-    <input id="text-input">
-    <button id="check-btn">Check</button>
-    <div id="result"></div>
-    <script src="script.js" type="module"></script>
     <nav>
       <ul>
         <li><a href="/Vig-frontend-demos/">Home</a></li>
@@ -33,6 +29,14 @@
         <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
       </ul>
     </nav>
+    <main>
+      <form> 
+        <input id="text-input" type="text">
+        <button id="check-btn">Check</button>
+        <div id="result"></div>
+      </form>
+      <script src="script.js" type="module"></script>
+    </main>
     <style>
       @keyframes fadeIn {
           to { opacity: 1; }
