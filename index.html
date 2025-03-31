@@ -1,102 +1,94 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    
-    <h1>Home</h1>
-    
-    <style>
-      body {
-          background-color: #2c2c2e;
-          text-align: center;
-          opacity: 0;
-          animation: fadeIn 0.3s ease-in-out forwards;  
-      }
-  </style>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+
   <style>
-    
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    body {
+      background-color: #2c2c2e;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 0.3s ease-in-out forwards;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+
     h1 {
-      color: #FFFFFF; /* Set the color to a specific hex code */
-      font-size: 2em; /* Set the font size to 2em */
+      color: #FFFFFF;
+      font-size: 2em;
     }
-    nav a {
-    color: #ccadf9; /* Sets the text color of links */
-    
-  }
-  
-  nav a:hover {
-    color: #f4a261; /* Change the color when hovering over the link */
-  }
-  
-  nav a:active {
-    color: red; /* Change the color when clicking on the link */
-  }
-  p a {
-    color: #ccadf9;
-  }
-  p a:hover {
-    color: #f4a261;
-  }
-  p a:active {
-    color: red;
-  }
-  nav ul {
-  list-style: none; 
-  padding: 0;
-  margin: 0;
-  display: flex;      /* Flexbox layout */
-  justify-content: center;  
-  gap: 20px;          
-}
 
-nav li {
-  margin: 0;   
-  padding: 0;  
-}
-
-footer {
-  margin-top: auto;
-  padding: 360px 0 50px;
-  color: #ffffff;
-}
-
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
+    nav a, p a {
+      color: #ccadf9;
     }
-}
 
-html, body {
-    overflow: hidden;
-    height: 100%;
-    margin: 0;
-  }
+    nav a:hover, p a:hover {
+      color: #f4a261;
+    }
+
+    nav a:active, p a:active {
+      color: red;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav li {
+      margin: 0;
+      padding: 0;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 10px 0 50px;
+      color: #ffffff;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
   </style>
-  </head>
-  <body style="opacity: 0; animation: fadeIn 0.5s ease-in-out forwards;">
+</head>
+<body style="opacity: 0; animation: fadeIn 0.5s ease-in-out forwards;">
+  <main>
+    <h1>Home</h1>
     <nav>
       <ul>
         <li><a href="/Vig-frontend-demos/CC/">Color Changer</a></li>
         <li><a href="/Vig-frontend-demos/RPG/">Role Play Game</a></li>
         <li><a href="/Vig-frontend-demos/MP/">Music Player</a></li>
         <li><a href="/Vig-frontend-demos/PC/">Palindrome Checker</a></li>
-        <li><a href ="/Vig-frontend-demos/RNC/">Roman Numeral Converter</a></li>
+        <li><a href="/Vig-frontend-demos/RNC/">Roman Numeral Converter</a></li>
         <li><a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a></li>
         <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
       </ul>
     </nav>
+  </main>
+  <footer>
+    <p>Developed by Cord Vigil in 2025 • Explore the source code on <a href="https://github.com/cvig7/Vig-frontend-demos" target="_blank">GitHub</a></p>
+  </footer>
 
-  </body>
   <script type="module">
     import _ from 'lodash';
   </script>
-  <footer>
-    <footer>
-      <p>Developed by Cord Vigil in 2025 • Explore the source code on <a href="https://github.com/cvig7/Vig-frontend-demos" target="_blank">GitHub</a></p>
-  </footer>
-</footer>
+</body>
 </html>
