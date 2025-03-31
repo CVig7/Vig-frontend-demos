@@ -91,9 +91,9 @@ h1 {
 }
 
 footer {
-  padding-top: 20px;
-  color: #ffffff;
   margin-top: auto;
+  padding: 10px 0 50px;
+  color: #ffffff;
 }
 
 #text {
