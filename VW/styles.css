@@ -164,11 +164,11 @@ nav {
 #game-canvas {
   display: none;
   position: absolute;
-  top: 150px; 
+  top: 150px; /* keeps space under nav */
   left: 0;
   width: 100vw;
-  height: calc(100vh - 200px); 
-  z-index: 1; 
+  height: calc(100vh - 250px); /* increased spacing to avoid footer overlap */
+  z-index: 1;
 }
 
 nav {
