@@ -189,7 +189,7 @@ const animateGame = () => {
       flag.claim();
       if (idx === flags.length - 1) {
         checkpointDetectionActive = false;
-        showCheckpointNotice("You reached the final checkpoint!");
+        showCheckpointNotice("Your on 🔥!");
         handleHeroMovement("ArrowRight", 0, false);
       }
     }
