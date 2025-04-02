@@ -6,15 +6,18 @@
     <title>Random Background Color Changer</title>
     
     <link rel="stylesheet" href="./styles.css" />
-    
+
     <style>
       body {
-          
-          text-align: center;
-          opacity: 0;
-          animation: fadeIn 0.3s ease-in-out forwards;  
+        text-align: center;
+        opacity: 0;
+        animation: fadeIn 0.3s ease-in-out forwards;
       }
-  </style>
+
+      @keyframes fadeIn {
+        to { opacity: 1; }
+      }
+    </style>
   </head>
   <body style="opacity: 0; animation: fadeIn 0.5s ease-in-out forwards;">
     <nav>
@@ -23,13 +26,14 @@
         <li><a href="/Vig-frontend-demos/RPG/">Role Play Game</a></li>
         <li><a href="/Vig-frontend-demos/MP/">Music Player</a></li>
         <li><a href="/Vig-frontend-demos/PC/">Palindrome Checker</a></li>
-        <li><a href="/Vig-frontend-demos/RNC/">Roman Numeral Converter</a>
+        <li><a href="/Vig-frontend-demos/RNC/">Roman Numeral Converter</a></li>
         <li><a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a></li>
         <li><a href="/Vig-frontend-demos/CR/">Cash Register</a></li>
         <li><a href="/Vig-frontend-demos/PS/">Pokemon Search</a></li>
         <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
       </ul>
     </nav>
+
     <main>
       <h1>Color Changer</h1>
       <section class="bg-information-container">
@@ -38,15 +42,14 @@
 
       <button class="btn" id="btn">Change Background Color</button>
     </main>
-    <script src="./script.js" type ="module"></script>
-    
-    <style>
-      @keyframes fadeIn {
-          to { opacity: 1; }
-      }
-      </style>
+
+    <footer>
+      <p>
+        A portion of the Color Changer code is from
+        <a href="https://www.freecodecamp.org/learn">freecodecamp</a>
+      </p>
+    </footer>
+
+    <script src="./script.js" type="module"></script>
   </body>
-  <footer>
-    <p>A  portion of the Color Changer code is from <a href="https://www.freecodecamp.org/learn">freecodecamp</a></p>
-  </footer>
 </html>

@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Background Color Changer</title>
     
-    
+
     <style>
       body {
-          
-          text-align: center;
-          opacity: 0;
-          animation: fadeIn 0.3s ease-in-out forwards;  
+        text-align: center;
+        opacity: 0;
+        animation: fadeIn 0.3s ease-in-out forwards;
       }
-  </style>
-    <script type="module" crossorigin src="/Vig-frontend-demos/assets/CC-DQc9Epj7.js"></script>
+
+      @keyframes fadeIn {
+        to { opacity: 1; }
+      }
+    </style>
+    <script type="module" crossorigin src="/Vig-frontend-demos/assets/CC-BqBpjgip.js"></script>
     <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/CC-BE04CujG.css">
+    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/CC-gyPZnkct.css">
   </head>
   <body style="opacity: 0; animation: fadeIn 0.5s ease-in-out forwards;">
     <nav>
@@ -25,13 +28,14 @@
         <li><a href="/Vig-frontend-demos/RPG/">Role Play Game</a></li>
         <li><a href="/Vig-frontend-demos/MP/">Music Player</a></li>
         <li><a href="/Vig-frontend-demos/PC/">Palindrome Checker</a></li>
-        <li><a href="/Vig-frontend-demos/RNC/">Roman Numeral Converter</a>
+        <li><a href="/Vig-frontend-demos/RNC/">Roman Numeral Converter</a></li>
         <li><a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a></li>
         <li><a href="/Vig-frontend-demos/CR/">Cash Register</a></li>
         <li><a href="/Vig-frontend-demos/PS/">Pokemon Search</a></li>
         <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
       </ul>
     </nav>
+
     <main>
       <h1>Color Changer</h1>
       <section class="bg-information-container">
@@ -39,15 +43,14 @@
       </section>
 
       <button class="btn" id="btn">Change Background Color</button>
-    </main>
-    
-    <style>
-      @keyframes fadeIn {
-          to { opacity: 1; }
-      }
-      </style>
+    </main>
+
+    <footer>
+      <p>
+        A portion of the Color Changer code is from
+        <a href="https://www.freecodecamp.org/learn">freecodecamp</a>
+      </p>
+    </footer>
+
   </body>
-  <footer>
-    <p>A  portion of the Color Changer code is from <a href="https://www.freecodecamp.org/learn">freecodecamp</a></p>
-  </footer>
 </html>
