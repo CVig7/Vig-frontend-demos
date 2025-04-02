@@ -15,6 +15,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 17px;
   line-height: 1.5;
+  padding-top: 40px;
 }
 
 main {
@@ -24,7 +25,13 @@ main {
 h1 {
   color: #ffffff;
   font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
 }
+
+nav {
+    margin-top: auto;
+  }
 
 nav a,
 p a {
