@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pokemon Search App</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <h1>Pokemon Search App</h1>
+    <style>
+      body {
+        text-align: center;
+        opacity: 0;
+        animation: fadeIn 0.5s ease-in-out forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/Vig-frontend-demos/">Home</a></li>
+        <li><a href="/Vig-frontend-demos/CC/">Color Changer</a></li>
+        <li><a href="/Vig-frontend-demos/RPG/">Role Play Game</a></li>
+        <li><a href="/Vig-frontend-demos/MP/">Music Player</a></li>
+        <li><a href="/Vig-frontend-demos/PC/">Palindrome Checker</a></li>
+        <li><a href="/Vig-frontend-demos/RNC/">Roman Numeral Converter</a></li>
+        <li><a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a></li>
+        <li><a href="/Vig-frontend-demos/CR/">Cash Register</a></li>
+        <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
+      </ul>
+    </nav>
+
+    
+
+    <main>
+      <form id="search-form">
+        <label for="search-input">Search for a Pokemon:</label>
+        <input id="search-input" type="text" placeholder="Enter Pokemon name or ID" required />
+        <button id="search-button">Search</button>
+      </form>
+      <div id="pokemon-name"></div>
+      <div id="pokemon-id"></div>
+      <div id="weight"></div>
+      <div id="height"></div>
+      <div id="types"></div>
+      <div id="hp"></div>
+      <div id="attack"></div>
+      <div id="defense"></div>
+      <div id="special-attack"></div>
+      <div id="special-defense"></div>
+      <div id="speed"></div>
+      <div id="sprite-container"></div>
+    </main>
+
+    <footer>
+      <p>
+        The Pokemon Search App is a certification project put together by Cord Vigil on
+        <a href="https://www.freecodecamp.org/learn">freecodecamp</a>.
+      </p>
+    </footer>
+
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>
