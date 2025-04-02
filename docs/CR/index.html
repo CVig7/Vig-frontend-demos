@@ -4,21 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Telephone Number Validator</title>
-
-    <h1>Telephone Number Validator</h1>
+    <title>Cash Register</title>
+    <h1>Cash Register</h1>
     <style>
       body {
         text-align: center;
         opacity: 0;
-        animation: fadeIn 0.3s ease-in-out forwards;
+        animation: fadeIn 0.5s ease-in-out forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
       }
     </style>
-    <script type="module" crossorigin src="/Vig-frontend-demos/assets/TNV-BrWu5R15.js"></script>
+    <script type="module" crossorigin src="/Vig-frontend-demos/assets/CR-mOkG39U3.js"></script>
     <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/TNV-CgcxLQou.css">
+    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/CR-OhGQK5wW.css">
   </head>
-  <body style="opacity: 0; animation: fadeIn 0.5s ease-in-out forwards">
+  <body>
     <nav>
       <ul>
         <li><a href="/Vig-frontend-demos/">Home</a></li>
@@ -27,7 +32,7 @@
         <li><a href="/Vig-frontend-demos/MP/">Music Player</a></li>
         <li><a href="/Vig-frontend-demos/PC/">Palindrome Checker</a></li>
         <li><a href="/Vig-frontend-demos/RNC/">Roman Numeral Converter</a></li>
-        <li><a href="/Vig-frontend-demos/CR/">Cash Register</a></li>
+        <li><a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a></li>
         <li><a href="/Vig-frontend-demos/PS/">Pokemon Search</a></li>
         <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
       </ul>
@@ -35,29 +40,19 @@
 
     <main>
       <form>
-        <input id="user-input" type="text" />
-        <div class="button-row">
-          <button id="check-btn">Check</button>
-          <button id="clear-btn">Clear</button>
-        </div>
-        <div id="results-div"></div>
+        <input id="cash" type="number" placeholder="Enter cash amount" />
+        <div id="change-due"></div>
+        <button id="purchase-btn">Sale</button>
       </form>
     </main>
-
 
-    <style>
-      @keyframes fadeIn {
-        to {
-          opacity: 1;
-        }
-      }
-    </style>
+    <footer>
+      <p>
+        The Cash Register Application is a certification program put together by
+        Cord Vigil on
+        <a href="https://www.freecodecamp.org/learn">freecodecamp</a>
+      </p>
+    </footer>
+
   </body>
-  <footer>
-    <p>
-      The Telephone Number Validator is a certification program put together by
-      Cord Vigil on
-      <a href="https://www.freecodecamp.org/learn">freecodecamp</a>
-    </p>
-  </footer>
 </html>
