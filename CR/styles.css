@@ -8,7 +8,7 @@
   --light-blue: #3f51b5;
   --white: #fff;
   --medium-grey: #75767b;
-  --black: #000
+  --black: #000;
 }
 
 html,
@@ -73,7 +73,7 @@ nav a:active {
 }
 
 p a {
-  color: "blue";
+  color: var(--white);
   text-decoration: none;
 }
 
@@ -125,7 +125,7 @@ button {
 footer {
   margin-top: auto;
   padding: 10px 0 50px;
-  color: "black";
+  color: var(--black);
 }
 
 @keyframes fadeIn {
@@ -154,7 +154,6 @@ footer {
   background-size: cover;
   animation: scrollLoop 60s linear infinite;
 }
-
 
 .layer10 {
   background-image: url("./assets/bg/10_Sky.png");
