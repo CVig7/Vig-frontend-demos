@@ -1,8 +1,12 @@
 const initiateButton = document.getElementById("initiate-game-button");
 const gameCanvas = document.getElementById("game-canvas");
 const introScreen = document.querySelector(".game-intro-screen");
-const finalCheckpointScreen = document.querySelector(".checkpoint-message-screen");
-const finalCheckpointText = document.querySelector(".checkpoint-message-screen > p");
+const finalCheckpointScreen = document.querySelector(
+  ".checkpoint-message-screen"
+);
+const finalCheckpointText = document.querySelector(
+  ".checkpoint-message-screen > p"
+);
 const context = gameCanvas.getContext("2d");
 gameCanvas.width = innerWidth;
 gameCanvas.height = innerHeight;
@@ -10,7 +14,9 @@ const fallAcceleration = 0.5;
 let checkpointDetectionActive = true;
 
 const getScaledSize = (dimension) => {
-  return innerHeight < 500 ? Math.ceil((dimension / 500) * innerHeight) : dimension;
+  return innerHeight < 500
+    ? Math.ceil((dimension / 500) * innerHeight)
+    : dimension;
 };
 
 class Hero {
@@ -30,7 +36,7 @@ class Hero {
     context.fillStyle = "#99c9ff";
     context.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
-  
+
   update() {
     this.draw();
     this.position.x += this.velocity.x;
@@ -53,6 +59,34 @@ class Hero {
     if (this.position.x >= gameCanvas.width - this.width * 2) {
       this.position.x = gameCanvas.width - this.width * 2;
     }
+  }
+}
+
+class Enemy {
+  constructor(x, y) {
+    this.position = { x, y };
+    this.width = getScaledSize(40);
+    this.height = getScaledSize(40);
+    this.color = "red";
+    this.speed = 0.8;
+  }
+
+  draw() {
+    context.fillStyle = this.color;
+    context.fillRect(this.position.x, this.position.y, this.width, this.height);
+  }
+
+  update(targetX, targetY) {
+    const dx = targetX - this.position.x;
+    const dy = targetY - this.position.y;
+    const distance = Math.hypot(dx, dy);
+
+    if (distance > 1) {
+      this.position.x += (dx / distance) * this.speed;
+      this.position.y += (dy / distance) * this.speed;
+    }
+
+    this.draw();
   }
 }
 
@@ -80,7 +114,7 @@ class Flag {
     this.width = getScaledSize(40);
     this.height = getScaledSize(70);
     this.claimed = false;
-  };
+  }
 
   draw() {
     context.fillStyle = "#f1be32";
@@ -92,9 +126,10 @@ class Flag {
     this.position.y = Infinity;
     this.claimed = true;
   }
-};
+}
 
 const hero = new Hero();
+const enemy = new Enemy(1000, getScaledSize(300));
 
 const terrainSpots = [
   { x: 500, y: getScaledSize(450) },
@@ -111,9 +146,7 @@ const terrainSpots = [
   { x: 4700, y: getScaledSize(150) },
 ];
 
-const terrainList = terrainSpots.map(
-  (spot) => new Terrain(spot.x, spot.y)
-);
+const terrainList = terrainSpots.map((spot) => new Terrain(spot.x, spot.y));
 
 const flagSpots = [
   { x: 1170, y: getScaledSize(80), z: 1 },
@@ -121,9 +154,7 @@ const flagSpots = [
   { x: 4800, y: getScaledSize(80), z: 3 },
 ];
 
-const flags = flagSpots.map(
-  (point) => new Flag(point.x, point.y, point.z)
-);
+const flags = flagSpots.map((point) => new Flag(point.x, point.y, point.z));
 
 const animateGame = () => {
   requestAnimationFrame(animateGame);
@@ -132,6 +163,7 @@ const animateGame = () => {
   terrainList.forEach((terrain) => terrain.draw());
   flags.forEach((flag) => flag.draw());
   hero.update();
+  enemy.update(hero.position.x, hero.position.y);
 
   if (userInputs.right.pressed && hero.position.x < getScaledSize(400)) {
     hero.velocity.x = 5;
@@ -181,7 +213,8 @@ const animateGame = () => {
       hero.position.y >= flag.position.y,
       hero.position.y + hero.height <= flag.position.y + flag.height,
       checkpointDetectionActive,
-      hero.position.x - hero.width <= flag.position.x - flag.width + hero.width * 0.9,
+      hero.position.x - hero.width <=
+        flag.position.x - flag.width + hero.width * 0.9,
       idx === 0 || flags[idx - 1].claimed,
     ];
 
