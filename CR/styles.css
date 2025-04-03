@@ -73,8 +73,8 @@ nav a:active {
 }
 
 p a {
-  color: var(--white);
-  text-decoration: none;
+  color: var(--black);
+  text-decoration: underline;
 }
 
 p a:hover {
