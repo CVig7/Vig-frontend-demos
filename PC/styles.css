@@ -1,57 +1,63 @@
+/* ===== Root CSS Variables for Theming ===== */
 :root {
-  --yellow: #f1be32;
-  --golden-yellow: #feac32;
-  --dark-purple: #110815;
-  --light-grey: #efefef;
-  --dark-grey: #2c2c2e;
+  --yellow: #f1be32; /* Bright yellow, accent or highlight */
+  --golden-yellow: #feac32; /* Golden tone for buttons or CTAs */
+  --dark-purple: #110815; /* Very dark purple for contrast or bg */
+  --light-grey: #efefef; /* Used for light backgrounds/text */
+  --dark-grey: #2c2c2e; /* Primary background color */
   --light-purple: #3f3d56;
   --light-blue: #3f51b5;
   --white: #fff;
   --medium-grey: #75767b;
-  --black: #000;
+  --black: #000; /* Default text or border color */
 }
 
-html, body {
+/* ===== Base Layout and Reset ===== */
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: hidden; /* Prevent scrolling */
 }
 
+/* ===== Body Styles ===== */
 body {
-  background-color: var(--dark-grey);
-  color: var(--black);
+  background-color: var(--dark-grey); /* Dark background for overall theme */
+  color: var(--black); /* Main text color */
   text-align: center;
-  opacity: 0;
+  opacity: 0; /* Start transparent for fade-in */
   animation: fadeIn 0.5s ease-in-out forwards;
   padding-top: 40px;
   display: flex;
   flex-direction: column;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 17px;
   line-height: 1.5;
 }
 
+/* ===== Main Section Layout ===== */
 main {
-  flex: 1 0 auto;
+  flex: 1 0 auto; /* Flexible height, don't shrink */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* ===== Navigation Bar ===== */
 nav {
   margin-top: auto;
   margin-bottom: 30px;
 }
 
 nav ul {
-  list-style: none;
+  list-style: none; /* Remove default bullets */
   padding: 0;
   margin: 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 20px; /* Space between links */
 }
 
 nav li {
@@ -64,13 +70,14 @@ nav a {
 }
 
 nav a:hover {
-  color: #f4a261;
+  color: #f4a261; /* Orange on hover */
 }
 
 nav a:active {
-  color: red;
+  color: red; /* Red when clicked */
 }
 
+/* ===== Link Styling in Paragraphs ===== */
 p a {
   color: var(--black);
   text-decoration: underline;
@@ -84,48 +91,54 @@ p a:active {
   color: red;
 }
 
+/* ===== Heading Styles ===== */
 h1 {
   font-size: 2em;
   margin-bottom: 30px;
 }
 
+/* ===== Form Layout ===== */
 form {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
-  gap: 15px; 
+  gap: 15px; /* Space between form elements */
   margin-bottom: 20px;
 }
 
+/* ===== Text Input Styling ===== */
 input[type="text"] {
   width: 250px;
-  max-width: 90%;
+  max-width: 90%; /* Responsive sizing */
   padding: 8px;
   font-size: 16px;
 }
 
+/* ===== Button Styles ===== */
 button {
   padding: 10px 20px;
   font-size: 16px;
-  border: 2 px solid var(--black);
+  border: 2px solid var(--black);
   background-color: var(--golden-yellow);
-  border: none;
   cursor: pointer;
   max-width: 250px;
 }
 
+/* ===== Footer Styling ===== */
 footer {
-  margin-top: auto;
-  
+  margin-top: auto; /* Push to bottom */
   padding: 10px 0 50px;
   color: var(--black);
 }
 
+/* ===== Fade In Animation ===== */
 @keyframes fadeIn {
   to {
     opacity: 1;
   }
 }
+
+/* ===== Parallax Background Container ===== */
 .parallax-bg {
   position: fixed;
   top: 0;
@@ -133,20 +146,22 @@ footer {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1;
+  z-index: -1; /* Behind page content */
 }
 
+/* ===== Base Styles for Each Parallax Layer ===== */
 .layer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;
+  width: 200%; /* Extend beyond viewport for scroll illusion */
   height: 100%;
   background-repeat: repeat-x;
   background-size: cover;
   animation: scrollLoop 60s linear infinite;
 }
 
+/* ===== Individual Parallax Layers with Speed Variations ===== */
 .layer10 {
   background-image: url("./assets/bg/10_Sky.png");
   animation-duration: 200s;
@@ -188,6 +203,7 @@ footer {
   animation-duration: 20s;
 }
 
+/* ===== Horizontal Scrolling Animation for Parallax ===== */
 @keyframes scrollLoop {
   from {
     transform: translateX(0);

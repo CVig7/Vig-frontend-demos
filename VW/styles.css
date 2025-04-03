@@ -1,15 +1,15 @@
-/* Reset default styles and set box sizing */
+/* ===== Global Reset and Box Sizing ===== */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensure padding/borders don't affect overall width */
 }
 
-/* Define color variables for theme */
+/* ===== Theme Variables ===== */
 :root {
-  --main-bg-color: #0f0f3d;
-  --section-bg-color: #1f1f5c;
-  --highlight-color: #ff4081;
+  --main-bg-color: #0f0f3d; /* Overall background */
+  --section-bg-color: #1f1f5c; /* Sections like panels/containers */
+  --highlight-color: #ff4081; /* Accent color, bright pink */
   --button-gradient-start: #ff6ec4;
   --button-gradient-end: #7873f5;
   --text-color: #f0f0f0;
@@ -21,14 +21,14 @@
   --medium-grey: #2c2c2e;
 }
 
-/* Ensure full viewport height and hide overflow */
+/* ===== Page Layout Reset ===== */
 html,
 body {
   height: 100%;
-  overflow: hidden;
+  overflow: hidden; /* Prevent scrollbars, especially with parallax layers */
 }
 
-/* Base body styles with fade-in animation */
+/* ===== Body Base Styling ===== */
 body {
   background-color: var(--medium-grey);
   color: var(--text-color);
@@ -36,76 +36,75 @@ body {
   font-size: 17px;
   line-height: 1.5;
   text-align: center;
-  opacity: 0;
+  opacity: 0; /* Start hidden for fade-in */
   animation: fadeIn 0.5s ease-in-out forwards;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh; /* Ensure page fills screen */
 }
 
-/* Center main content and account for fixed nav spacing */
+/* ===== Main Content Area ===== */
 main {
-  flex: 1;
+  flex: 1; /* Fill available vertical space */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 60px; /* offset for nav */
+  padding-top: 60px; /* Room for fixed nav if used */
 }
 
-/* Navigation links styling */
-nav a {
-  color: #0c0a0e;
-}
-nav a:hover {
-  color: #f4a261;
-}
-nav a:active {
-  color: red;
+/* ===== Navigation Styling ===== */
+nav {
+  position: relative;
+  z-index: 20; /* Sit above parallax layers */
+  margin-top: 30px;
 }
 
-/* Paragraph links styling */
-p a {
-  color: #ccadf9;
-  text-decoration: none;
-}
-p a:hover {
-  color: #f4a261;
-}
-p a:active {
-  color: red;
-}
-
-/* Heading style */
-h1 {
-  font-size: 2em;
-}
-
-/* Nav layout (horizontal list) */
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
+  display: flex; /* Horizontal nav layout */
   justify-content: center;
   gap: 20px;
 }
 
-/* Remove spacing from nav list items */
 nav li {
   margin: 0;
   padding: 0;
 }
 
-/* Nav spacing above main content */
-nav {
-  position: fixed;
-  top: 0;
-  position: relative;
-  z-index: 20; 
-  margin-top: 30px;
+nav a {
+  color: #0c0a0e;
 }
 
-/* Intro screen container styling */
+nav a:hover {
+  color: #f4a261;
+}
+
+nav a:active {
+  color: red;
+}
+
+/* ===== Paragraph Links ===== */
+p a {
+  color: #ccadf9;
+  text-decoration: none;
+}
+
+p a:hover {
+  color: #f4a261;
+}
+
+p a:active {
+  color: red;
+}
+
+/* ===== Headings ===== */
+h1 {
+  font-size: 2em;
+}
+
+/* ===== Intro Screen Container ===== */
 .game-intro-screen {
   background-color: var(--section-bg-color);
   width: 100%;
@@ -116,14 +115,14 @@ nav {
   margin: auto;
 }
 
-/* Game title header */
+/* ===== Game Title ===== */
 .game-title {
   text-align: center;
   font-size: 2rem;
   color: var(--highlight-color);
 }
 
-/* Game instructions paragraph */
+/* ===== Game Instructions ===== */
 .game-instructions {
   text-align: center;
   font-size: 1.2rem;
@@ -132,7 +131,7 @@ nav {
   color: var(--text-color);
 }
 
-/* Styling for the start game button */
+/* ===== Start Game Button ===== */
 .game-button {
   cursor: pointer;
   width: 140px;
@@ -149,20 +148,19 @@ nav {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Button hover effect */
 .game-button:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Slight grow on hover */
   box-shadow: 0 0 10px var(--highlight-color);
 }
 
-/* Center the button horizontally */
+/* ===== Wrapper for Game Button (centers it) ===== */
 .button-holder {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Centered checkpoint notification styling */
+/* ===== Checkpoint Notification Box ===== */
 .checkpoint-message-screen {
   position: fixed;
   top: 50%;
@@ -174,36 +172,37 @@ nav {
   background-color: var(--section-bg-color);
   border-radius: 20px;
   padding: 15px;
-  display: none;
+  display: none; /* Hidden by default */
   box-shadow: 0 0 15px rgba(255, 64, 129, 0.4);
   color: var(--highlight-color);
   z-index: 10;
 }
 
-/* Canvas setup for full screen game view */
+/* ===== Game Canvas for Gameplay View ===== */
 #game-canvas {
-  display: none;
+  display: none; /* Hidden until game starts */
   position: relative;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 100px); /* Adjust height for nav */
+  height: calc(100vh - 100px); /* Responsive height with nav offset */
   z-index: 99;
   background: transparent;
 }
 
-/* Responsive layout for larger screens */
+/* ===== Responsive Layout for Larger Screens ===== */
 @media (min-width: 768px) {
   .game-intro-screen {
     width: 60%;
     max-width: 700px;
   }
+
   .checkpoint-message-screen {
     max-width: 300px;
   }
 }
 
-/* Parallax background wrapper */
+/* ===== Parallax Background Container ===== */
 .parallax-bg {
   position: fixed;
   top: 0;
@@ -211,22 +210,22 @@ nav {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1;
+  z-index: -1; /* Stay behind content */
 }
 
-/* Each layer of parallax background */
+/* ===== Parallax Layer Base Styling ===== */
 .layer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;
+  width: 200%; /* Twice the width for smooth looping */
   height: 100%;
   background-repeat: repeat-x;
   background-size: cover;
   animation: scrollLoop 60s linear infinite;
 }
 
-/* Define each layer’s image and scroll speed */
+/* ===== Parallax Layers with Speed & Depth ===== */
 .layer10 {
   background-image: url("assets/bg/10_Sky.png");
   animation-duration: 200s;
@@ -278,24 +277,24 @@ nav {
   z-index: 10;
 }
 
-/* Repeating scroll animation */
+/* ===== Animation for Parallax Scrolling ===== */
 @keyframes scrollLoop {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Creates an infinite scrolling illusion */
   }
 }
 
-/* Fade-in animation for page */
+/* ===== Fade In Animation for Body ===== */
 @keyframes fadeIn {
   to {
     opacity: 1;
   }
 }
 
-/* Footer with spacing */
+/* ===== Footer Styling ===== */
 footer {
   margin-top: auto;
   padding: 10px 0 50px;

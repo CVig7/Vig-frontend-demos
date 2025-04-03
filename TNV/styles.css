@@ -1,29 +1,32 @@
+/* ===== Root CSS Variables: Define reusable colors for theme consistency ===== */
 :root {
-  --yellow: #f1be32;
-  --golden-yellow: #feac32;
+  --yellow: #f1be32; /* Bright yellow - accents/highlights */
+  --golden-yellow: #feac32; /* Used for buttons and primary CTAs */
   --dark-purple: #110815;
   --light-grey: #efefef;
-  --dark-grey: #2c2c2e;
+  --dark-grey: #2c2c2e; /* Background base */
   --light-purple: #3f3d56;
   --light-blue: #3f51b5;
   --white: #fff;
   --medium-grey: #75767b;
-  --black: #000;
+  --black: #000; /* Default text or border color */
 }
 
+/* ===== Page Setup: Full viewport and scroll disabled ===== */
 html,
 body {
-  height: 100%;
+  height: 100%; /* Full viewport height */
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: hidden; /* Disable scrolling (used with fixed background) */
 }
 
+/* ===== Body Styling: Layout, text, animation ===== */
 body {
-  background-color: var(--dark-grey);
-  color: var(--black);
+  background-color: var(--dark-grey); /* Background color from variable */
+  color: var(--black); /* Default text color */
   text-align: center;
-  opacity: 0;
+  opacity: 0; /* Start hidden for fade-in animation */
   animation: fadeIn 0.5s ease-in-out forwards;
   padding-top: 40px;
   display: flex;
@@ -33,26 +36,28 @@ body {
   line-height: 1.5;
 }
 
+/* ===== Main Content Area ===== */
 main {
-  flex: 1 0 auto;
+  flex: 1 0 auto; /* Fills available vertical space */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* ===== Navigation Bar ===== */
 nav {
-  margin-top: auto;
+  margin-top: auto; /* Push nav to bottom if space allows */
   margin-bottom: 30px;
 }
 
 nav ul {
-  list-style: none;
+  list-style: none; /* Remove default list bullets */
   padding: 0;
   margin: 0;
-  display: flex;
+  display: flex; /* Horizontal nav layout */
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-wrap: wrap; /* Wrap if screen is narrow */
+  gap: 20px; /* Space between nav links */
 }
 
 nav li {
@@ -61,17 +66,18 @@ nav li {
 }
 
 nav a {
-  color: var(--black);
+  color: var(--black); /* Default link color */
 }
 
 nav a:hover {
-  color: #f4a261;
+  color: #f4a261; /* Hover color: soft orange */
 }
 
 nav a:active {
-  color: red;
+  color: red; /* Active/clicked color */
 }
 
+/* ===== Link Styling Inside Paragraphs ===== */
 p a {
   color: var(--black);
   text-decoration: underline;
@@ -85,74 +91,85 @@ p a:active {
   color: red;
 }
 
+/* ===== Heading Style ===== */
 h1 {
   font-size: 2em;
   margin-bottom: 30px;
 }
 
+/* ===== Form Styling ===== */
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 15px; /* Space between form fields */
   margin-bottom: 20px;
 }
 
+/* ===== Text Input Fields ===== */
 input[type="text"] {
   width: 250px;
-  max-width: 90%;
+  max-width: 90%; /* Responsive on small screens */
   padding: 8px;
   font-size: 16px;
 }
 
+/* ===== Row of Buttons (e.g. Reset/Submit) ===== */
 .button-row {
   display: flex;
-  gap: 10px;
+  gap: 10px; /* Space between buttons */
   justify-content: center;
 }
 
+/* ===== Button Styling ===== */
 button {
   padding: 10px 20px;
   font-size: 16px;
+  border: 2px solid var(--black);
   background-color: var(--golden-yellow);
-  border: none;
   cursor: pointer;
   max-width: 250px;
 }
 
+/* ===== Footer Styling ===== */
 footer {
-  margin-top: auto;
+  margin-top: auto; /* Stick footer to bottom */
   padding: 10px 0 50px;
   color: var(--black);
 }
 
+/* ===== Fade In Animation (used on body) ===== */
 @keyframes fadeIn {
   to {
     opacity: 1;
   }
 }
 
+/* ===== Parallax Background Container ===== */
 .parallax-bg {
-  position: fixed;
+  position: fixed; /* Sticks to viewport */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  z-index: -1;
+  overflow: hidden; /* Hide overflowing layers */
+  z-index: -1; /* Behind all content */
 }
 
+/* ===== General Styling for Parallax Layers ===== */
 .layer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;
+  width: 200%; /* Extended width for scrolling effect */
   height: 100%;
   background-repeat: repeat-x;
   background-size: cover;
-  animation: scrollLoop 60s linear infinite;
+  animation: scrollLoop 60s linear infinite; /* Default scroll speed */
 }
 
+/* ===== Individual Layer Images + Animation Durations ===== */
+/* Slower = further away in depth perception */
 .layer10 {
   background-image: url("./assets/bg/10_Sky.png");
   animation-duration: 200s;
@@ -194,11 +211,12 @@ footer {
   animation-duration: 20s;
 }
 
+/* ===== Scrolling Animation Loop for Background Layers ===== */
 @keyframes scrollLoop {
   from {
-    transform: translateX(0);
+    transform: translateX(0); /* Start at full position */
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Scroll left halfway across */
   }
 }

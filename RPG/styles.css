@@ -1,36 +1,40 @@
+/* ===== Global Reset ===== */
 * {
-  margin: 0;
+  margin: 0; /* Remove default spacing around elements */
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Include padding and border in element’s total width/height */
 }
 
+/* ===== Root Variables for Color Theming ===== */
 :root {
   --yellow: #f1be32;
-  --golden-yellow: #feac32;
+  --golden-yellow: #feac32; /* Used for button background */
   --dark-purple: #110815;
   --light-grey: #efefef;
-  --dark-grey: #333;
+  --dark-grey: #333; /* Base dark background */
   --light-purple: #3f3d56;
   --light-blue: #3f51b5;
   --white: #fff;
-  --medium-grey: #2c2c2e;
-  --black: #000;
+  --medium-grey: #2c2c2e; /* Used for body background */
+  --black: #000; /* Common for text and borders */
 }
 
+/* ===== HTML & Body Layout ===== */
 html,
 body {
-  height: 100%;
-  overflow: hidden;
+  height: 100%; /* Take up full screen height */
+  overflow: hidden; /* Prevent scrollbars from showing */
 }
 
+/* ===== Body Styling ===== */
 body {
-  background-color: var(--medium-grey);
-  color: var(--white);
+  background-color: var(--medium-grey); /* Set background */
+  color: var(--white); /* Default text color */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 17px;
   line-height: 1.5;
   text-align: center;
-  opacity: 0;
+  opacity: 0; /* Hidden until fade-in is done */
   animation: fadeIn 0.5s ease-in-out forwards;
   display: flex;
   flex-direction: column;
@@ -38,6 +42,7 @@ body {
   padding-top: 40px;
 }
 
+/* ===== Main Section Styling ===== */
 main {
   flex: 1 0 auto;
   display: flex;
@@ -47,18 +52,19 @@ main {
   padding-top: 40px;
 }
 
+/* ===== Navigation ===== */
 nav {
   margin-top: auto;
 }
 
 nav ul {
-  list-style: none;
+  list-style: none; /* Remove bullet points */
   padding: 0;
   margin: 0;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-wrap: wrap; /* Wrap links if screen is narrow */
+  gap: 20px; /* Space between nav items */
 }
 
 nav li {
@@ -67,20 +73,20 @@ nav li {
 }
 
 nav a {
-  color: var(--black);
+  color: var(--black); /* Link color */
 }
 
 nav a:hover {
-  color: #f4a261;
+  color: #f4a261; /* Light orange on hover */
 }
 
 nav a:active {
-  color: red;
+  color: red; /* Red on click */
 }
 
+/* ===== Link Styling in Paragraphs ===== */
 p a {
   color: var(--black);
-
   text-decoration: underline;
 }
 
@@ -92,33 +98,38 @@ p a:active {
   color: red;
 }
 
+/* ===== Headings ===== */
 h1 {
   font-size: 2em;
   margin-bottom: 30px;
-  color: var(--black)
+  color: var(--black);
 }
 
+/* ===== Footer Styling ===== */
 footer {
-  margin-top: auto;
+  margin-top: auto; /* Push footer to bottom */
   padding: 10px 0 50px;
   color: var(--black);
 }
 
+/* ===== Text Box ===== */
 #text {
   background-color: #0a0a23;
   color: #ffffff;
   padding: 10px;
 }
 
+/* ===== Main Game Box ===== */
 #game {
   max-width: 600px;
   max-height: 400px;
   background-color: #ffffff;
-  color: #ffffff;
+  color: #ffffff; /* Text may be overridden by inner elements */
   padding: 10px;
   margin: auto;
 }
 
+/* ===== Game Control Boxes ===== */
 #controls,
 #stats {
   border: 1px solid #0a0a23;
@@ -126,32 +137,37 @@ footer {
   color: #0a0a23;
 }
 
+/* ===== Monster Stats Box (Hidden by Default) ===== */
 #monsterStats {
-  display: none;
+  display: none; /* Hidden until triggered */
   border: 1px solid #0a0a23;
   padding: 5px;
   color: #ffffff;
-  background-color: #c70d0d;
+  background-color: #c70d0d; /* Bright red background */
 }
 
+/* ===== Individual Stat Padding ===== */
 .stat {
   padding-right: 10px;
 }
 
+/* ===== Button Styles ===== */
 button {
   cursor: pointer;
   color: #0a0a23;
   background-color: #feac32;
-  background-image: linear-gradient(#fecc4c, #ffac33);
+  background-image: linear-gradient(#fecc4c, #ffac33); /* Gradient effect */
   border: 3px solid #feac32;
 }
 
+/* ===== Fade In Animation ===== */
 @keyframes fadeIn {
   to {
     opacity: 1;
   }
 }
 
+/* ===== Parallax Background Container ===== */
 .parallax-bg {
   position: fixed;
   top: 0;
@@ -159,20 +175,22 @@ button {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1;
+  z-index: -1; /* Behind all content */
 }
 
+/* ===== General Layer Styling ===== */
 .layer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;
+  width: 200%; /* Twice the width to scroll horizontally */
   height: 100%;
-  background-repeat: repeat-x;
+  background-repeat: repeat-x; /* Repeat images horizontally */
   background-size: cover;
   animation: scrollLoop 60s linear infinite;
 }
 
+/* ===== Individual Layers (Deeper = Slower) ===== */
 .layer10 {
   background-image: url("../assets/bg/10_Sky.png");
   animation-duration: 200s;
@@ -214,11 +232,12 @@ button {
   animation-duration: 20s;
 }
 
+/* ===== Scroll Animation for Parallax ===== */
 @keyframes scrollLoop {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Scroll halfway to loop cleanly */
   }
 }

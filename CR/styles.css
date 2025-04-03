@@ -1,9 +1,10 @@
+/* ===== CSS Variables ===== */
 :root {
-  --yellow: #f1be32;
-  --golden-yellow: #feac32;
-  --dark-purple: #110815;
+  --yellow: #f1be32; /* Bright yellow tone */
+  --golden-yellow: #feac32; /* Rich golden yellow, used for buttons */
+  --dark-purple: #110815; /* Deep purple, possibly for text/background contrast */
   --light-grey: #efefef;
-  --dark-grey: #2c2c2e;
+  --dark-grey: #2c2c2e; /* Dark gray, often used as a background */
   --light-purple: #3f3d56;
   --light-blue: #3f51b5;
   --white: #fff;
@@ -11,19 +12,21 @@
   --black: #000;
 }
 
+/* ===== Base Page Setup ===== */
 html,
 body {
-  height: 100%;
+  height: 100%; /* Take up full viewport height */
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: hidden; /* Prevent scrolling */
 }
 
+/* ===== Body Styling ===== */
 body {
-  background-color: var(--dark-grey);
-  color: var(--white);
+  background-color: var(--dark-grey); /* Set background using variable */
+  color: var(--white); /* Text color */
   text-align: center;
-  opacity: 0;
+  opacity: 0; /* Start invisible for fade-in effect */
   animation: fadeIn 0.5s ease-in-out forwards;
   padding-top: 40px;
   display: flex;
@@ -33,26 +36,28 @@ body {
   line-height: 1.5;
 }
 
+/* ===== Main Content Area ===== */
 main {
-  flex: 1 0 auto;
+  flex: 1 0 auto; /* Take up remaining vertical space */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* ===== Navigation Styling ===== */
 nav {
   margin-top: auto;
-  margin-bottom: 30px;
+  margin-bottom: 30px; /* Push to bottom with spacing */
 }
 
 nav ul {
-  list-style: none;
+  list-style: none; /* Remove bullet points */
   padding: 0;
   margin: 0;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-wrap: wrap; /* Wrap items on smaller screens */
+  gap: 20px; /* Space between items */
 }
 
 nav li {
@@ -65,13 +70,14 @@ nav a {
 }
 
 nav a:hover {
-  color: #f4a261;
+  color: #f4a261; /* Change on hover */
 }
 
 nav a:active {
   color: red;
 }
 
+/* ===== Link Styling in Paragraphs ===== */
 p a {
   color: var(--black);
   text-decoration: underline;
@@ -85,20 +91,23 @@ p a:active {
   color: red;
 }
 
+/* ===== Headings ===== */
 h1 {
   font-size: 2em;
   margin-bottom: 30px;
   color: var(--black);
 }
 
+/* ===== Form Layout ===== */
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 15px; /* Space between form elements */
   margin-bottom: 20px;
 }
 
+/* ===== Input Fields Styling ===== */
 input[type="text"],
 input[type="number"] {
   width: 250px;
@@ -107,33 +116,38 @@ input[type="number"] {
   font-size: 16px;
 }
 
+/* ===== Button Row for Form Controls ===== */
 .button-row {
   display: flex;
   gap: 10px;
   justify-content: center;
 }
 
+/* ===== Button Styling ===== */
 button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: var(--golden-yellow);
+  background-color: var(--golden-yellow); /* Bright CTA color */
   border: 2px solid var(--black);
   cursor: pointer;
   max-width: 250px;
 }
 
+/* ===== Footer Styling ===== */
 footer {
   margin-top: auto;
   padding: 10px 0 50px;
   color: var(--black);
 }
 
+/* ===== Fade-in Animation ===== */
 @keyframes fadeIn {
   to {
     opacity: 1;
   }
 }
 
+/* ===== Background Parallax Container ===== */
 .parallax-bg {
   position: fixed;
   top: 0;
@@ -141,20 +155,22 @@ footer {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1;
+  z-index: -1; /* Send to background */
 }
 
+/* ===== Each Parallax Layer Styling ===== */
 .layer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;
+  width: 200%; /* Wider than viewport to enable scrolling illusion */
   height: 100%;
   background-repeat: repeat-x;
   background-size: cover;
-  animation: scrollLoop 60s linear infinite;
+  animation: scrollLoop 60s linear infinite; /* Default scroll speed */
 }
 
+/* ===== Individual Layer Images & Speeds (slower = further back) ===== */
 .layer10 {
   background-image: url("./assets/bg/10_Sky.png");
   animation-duration: 200s;
@@ -196,6 +212,7 @@ footer {
   animation-duration: 20s;
 }
 
+/* ===== Scrolling Background Effect Animation ===== */
 @keyframes scrollLoop {
   from {
     transform: translateX(0);
