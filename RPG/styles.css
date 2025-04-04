@@ -252,9 +252,10 @@ button {
 
 /* The hamburger toggle button */
 .menu-toggle {
-  background-color: #333; /* dark background */
-  color: #fff; /* white text */
-  border: none;
+  background-color: #333 !important; /* dark background */
+  background-image: none !important;
+  color: #fff !important; 
+  border: none !important;
   padding: 0.5rem 1rem;
   cursor: pointer;
   font-size: 1rem;
