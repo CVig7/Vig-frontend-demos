@@ -122,6 +122,9 @@ input[type="number"] {
   gap: 10px;
   justify-content: center;
 }
+#change-due {
+  color: var(--black); 
+}
 
 /* ===== Button Styling ===== */
 button {

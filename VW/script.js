@@ -32,7 +32,7 @@ class Hero {
     this.velocity = { x: 0, y: 0 };
     this.width = getScaledSize(40);
     this.height = getScaledSize(40);
-    this.color = "#99c9ff";
+    this.color = "black";
   }
   draw() {
     context.fillStyle = "black";
@@ -71,7 +71,7 @@ class Enemy {
     this.width = getScaledSize(40);
     this.height = getScaledSize(40);
     this.color = "red";
-    this.speed = 1.1;
+    this.speed = 1.0;
   }
   draw() {
     context.fillStyle = this.color;
@@ -95,13 +95,9 @@ class Terrain {
     this.position = { x, y };
     this.width = 200;
     this.height = getScaledSize(40);
-    
+
     //strobe ladies and gents
-    this.color = [
-      "blue",
-      "white",
-      "orange"
-    ];
+    this.color = ["blue", "white", "orange"];
     this.currentColorIndex = Math.floor(Math.random() * this.color.length);
     this.framrate = 0;
   }
@@ -111,7 +107,13 @@ class Terrain {
       this.currentColorIndex = (this.currentColorIndex + 1) % this.color.length;
     }
     context.fillStyle = this.color[this.currentColorIndex];
-    context.fillRect(this.position.x, this.position.y, this.width, this.height, this.color);
+    context.fillRect(
+      this.position.x,
+      this.position.y,
+      this.width,
+      this.height,
+      this.color
+    );
   }
 }
 
