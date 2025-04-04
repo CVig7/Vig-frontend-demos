@@ -19,9 +19,9 @@
         }
       }
     </style>
-    <script type="module" crossorigin src="/Vig-frontend-demos/assets/PS-DGIg73OC.js"></script>
+    <script type="module" crossorigin src="/Vig-frontend-demos/assets/PS-RfBCVGGl.js"></script>
     <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/PS--wWQh13t.css">
+    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/PS-Yjs2xkjn.css">
   </head>
   <body>
     <div class="parallax-bg">
@@ -36,8 +36,9 @@
       <div class="layer layer2"></div>
       <div class="layer layer1"></div>
     </div>
-    <nav>
-      <ul>
+    <nav class="dropdown-nav">
+      <button class="menu-toggle">☰ Menu</button>
+      <ul class="nav-links">
         <li><a href="/Vig-frontend-demos/">Home</a></li>
         <li><a href="/Vig-frontend-demos/CC/">Color Changer</a></li>
         <li><a href="/Vig-frontend-demos/RPG/">Role Play Game</a></li>
@@ -51,7 +52,6 @@
         <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
       </ul>
     </nav>
-
     <main>
       <h1>Pokemon Search App</h1>
       <form id="search-form">
@@ -86,5 +86,11 @@
       </p>
     </footer>
 
+    <script>
+      // Dropdown Menu Toggle
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".dropdown-nav").classList.toggle("nav-open");
+      });
+    </script>
   </body>
 </html>

@@ -29,19 +29,18 @@
       <div class="layer layer2"></div>
       <div class="layer layer1"></div>
     </div>
-    <nav>
-      <ul>
+    <nav class="dropdown-nav">
+      <button class="menu-toggle">☰ Menu</button>
+      <ul class="nav-links">
         <li><a href="/Vig-frontend-demos/">Home</a></li>
         <li><a href="/Vig-frontend-demos/CC/">Color Changer</a></li>
         <li><a href="/Vig-frontend-demos/RPG/">Role Play Game</a></li>
         <li><a href="/Vig-frontend-demos/MP/">Music Player</a></li>
         <li><a href="/Vig-frontend-demos/RNC/">Roman Numeral Converter</a></li>
-        <li>
-          <a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a>
-        </li>
-        <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
+        <li><a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a></li>
         <li><a href="/Vig-frontend-demos/CR/">Cash Register</a></li>
         <li><a href="/Vig-frontend-demos/PS/">Pokemon Search</a></li>
+        <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
       </ul>
     </nav>
     <main>
@@ -53,6 +52,12 @@
         <div id="result"></div>
       </form>
       <script src="script.js" type="module"></script>
+      <script>
+        // Dropdown Menu Toggle
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+          document.querySelector('.dropdown-nav').classList.toggle('nav-open');
+        });
+      </script>
     </main>
     <style>
       @keyframes fadeIn {

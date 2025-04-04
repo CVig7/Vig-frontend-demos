@@ -14,9 +14,9 @@
         animation: fadeIn 0.3s ease-in-out forwards;
       }
     </style>
-    <script type="module" crossorigin src="/Vig-frontend-demos/assets/PC-BIi7zYk4.js"></script>
+    <script type="module" crossorigin src="/Vig-frontend-demos/assets/PC-DGfSLkI0.js"></script>
     <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/PC-XLSEKgo_.css">
+    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/PC-De4BYgii.css">
   </head>
   <body style="opacity: 0; animation: fadeIn 0.5s ease-in-out forwards">
     <div class="parallax-bg">
@@ -31,19 +31,18 @@
       <div class="layer layer2"></div>
       <div class="layer layer1"></div>
     </div>
-    <nav>
-      <ul>
+    <nav class="dropdown-nav">
+      <button class="menu-toggle">☰ Menu</button>
+      <ul class="nav-links">
         <li><a href="/Vig-frontend-demos/">Home</a></li>
         <li><a href="/Vig-frontend-demos/CC/">Color Changer</a></li>
         <li><a href="/Vig-frontend-demos/RPG/">Role Play Game</a></li>
         <li><a href="/Vig-frontend-demos/MP/">Music Player</a></li>
         <li><a href="/Vig-frontend-demos/RNC/">Roman Numeral Converter</a></li>
-        <li>
-          <a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a>
-        </li>
-        <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
+        <li><a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a></li>
         <li><a href="/Vig-frontend-demos/CR/">Cash Register</a></li>
         <li><a href="/Vig-frontend-demos/PS/">Pokemon Search</a></li>
+        <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
       </ul>
     </nav>
     <main>
@@ -54,6 +53,12 @@
         <button id="check-btn">Check</button>
         <div id="result"></div>
       </form>
+      <script>
+        // Dropdown Menu Toggle
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+          document.querySelector('.dropdown-nav').classList.toggle('nav-open');
+        });
+      </script>
     </main>
     <style>
       @keyframes fadeIn {

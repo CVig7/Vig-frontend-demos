@@ -21,8 +21,9 @@
       <div class="layer layer1"></div>
     </div>
     <main>
-      <nav>
-        <ul>
+      <nav class="dropdown-nav">
+        <button class="menu-toggle">☰ Menu</button>
+        <ul class="nav-links">
           <li><a href="/Vig-frontend-demos/CC/">Color Changer</a></li>
           <li><a href="/Vig-frontend-demos/RPG/">Role Play Game</a></li>
           <li><a href="/Vig-frontend-demos/MP/">Music Player</a></li>
@@ -51,6 +52,9 @@
 
     <script type="module">
       import _ from "lodash";
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".dropdown-nav").classList.toggle("nav-open");
+      });
     </script>
   </body>
 </html>

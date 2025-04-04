@@ -1,3 +1,5 @@
+/* ========== CSS VARIABLES ========== */
+/* Define a set of custom properties (variables) for consistent theming */
 :root {
   --yellow: #f1be32;
   --golden-yellow: #feac32;
@@ -11,6 +13,8 @@
   --black: #000;
 }
 
+/* ========== BASE PAGE LAYOUT ========== */
+/* Make sure html and body take up the full height and remove scrollbars */
 html,
 body {
   height: 100%;
@@ -18,23 +22,27 @@ body {
   overflow: hidden;
 }
 
+/* Main body styling */
 body {
-  background-color: #2c2c2e;
+  background-color: #2c2c2e; /* dark grey background */
   text-align: center;
-  opacity: 0;
-  animation: fadeIn 0.3s ease-in-out forwards;
+  opacity: 0; /* initially transparent for fade-in effect */
+  animation: fadeIn 0.3s ease-in-out forwards; /* fade-in animation on load */
   display: flex;
   flex-direction: column;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 17px;
   line-height: 1.5;
-  padding-top: 40px;
+  padding-top: 40px; /* space at the top for visual breathing room */
 }
 
+/* ========== MAIN CONTENT ========== */
+/* Let main content grow and fill vertical space */
 main {
   flex: 1 0 auto;
 }
 
+/* Style for main heading */
 h1 {
   color: var(--black);
   font-size: 2em;
@@ -42,51 +50,63 @@ h1 {
   text-align: center;
 }
 
+/* ========== NAVIGATION STYLES ========== */
+/* Navigation container spacing */
 nav {
   margin-top: auto;
 }
 
+/* Link colors inside nav and paragraph tags */
 nav a,
 p a {
-  color: var(--black);
+  color: var(--black); /* default color */
 }
 
+/* Hover color for links */
 nav a:hover,
 p a:hover {
-  color: #f4a261;
+  color: #f4a261; /* warm orange hover effect */
 }
 
+/* Active (clicked) link color */
 nav a:active,
 p a:active {
   color: red;
 }
 
+/* Unordered list inside nav */
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
+  display: flex; /* horizontal menu */
   justify-content: center;
-  gap: 20px;
+  gap: 20px; /* space between links */
 }
 
+/* Individual list items */
 nav li {
   margin: 0;
   padding: 0;
 }
 
+/* ========== FOOTER STYLES ========== */
 footer {
   margin-top: auto;
   padding: 10px 0 50px;
   color: var(--black);
 }
 
+/* ========== FADE IN ANIMATION ========== */
+/* Used to smoothly reveal the page */
 @keyframes fadeIn {
   to {
     opacity: 1;
   }
 }
 
+/* ========== PARALLAX BACKGROUND STYLES ========== */
+/* Background wrapper that stays fixed behind everything */
 .parallax-bg {
   position: fixed;
   top: 0;
@@ -94,20 +114,22 @@ footer {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1;
+  z-index: -1; /* make sure it’s behind everything */
 }
 
+/* General style for each background layer */
 .layer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;
+  width: 200%; /* extra width to allow smooth scrolling */
   height: 100%;
   background-repeat: repeat-x;
   background-size: cover;
-  animation: scrollLoop 60s linear infinite;
+  animation: scrollLoop 60s linear infinite; /* horizontal scroll */
 }
 
+/* Background layers with decreasing animation duration to simulate depth */
 .layer10 {
   background-image: url("assets/bg/10_Sky.png");
   animation-duration: 200s;
@@ -149,6 +171,7 @@ footer {
   animation-duration: 20s;
 }
 
+/* Animation keyframes for scrolling background layers */
 @keyframes scrollLoop {
   from {
     transform: translateX(0);
@@ -156,4 +179,55 @@ footer {
   to {
     transform: translateX(-50%);
   }
+}
+
+/* ========== DROPDOWN NAVIGATION STYLES ========== */
+/* Container that holds the dropdown menu and the button */
+.dropdown-nav {
+  position: absolute; /* floats at the top-left of the screen */
+  top: 1rem;
+  left: 1rem;
+  z-index: 100; /* stay above parallax background */
+}
+
+/* The hamburger toggle button */
+.menu-toggle {
+  background-color: #333; /* dark background */
+  color: #fff; /* white text */
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+/* Dropdown list itself */
+.nav-links {
+  display: none; /* hidden until menu is toggled */
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0.85); /* semi-transparent black */
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+}
+
+/* Each item inside the dropdown */
+.nav-links li {
+  margin: 0.25rem 0;
+}
+
+/* Links inside the dropdown */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hover effect for dropdown links */
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Class used to open the dropdown menu */
+.nav-open .nav-links {
+  display: block;
 }
