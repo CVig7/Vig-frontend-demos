@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Background Color Changer</title>
 
-    <script type="module" crossorigin src="/Vig-frontend-demos/assets/CC-C8xrgsAg.js"></script>
+    <script type="module" crossorigin src="/Vig-frontend-demos/assets/CC-wz-NW9aV.js"></script>
     <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/CC-CNckLDRx.css">
+    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/CC-DrFiLu_z.css">
   </head>
   <body style="opacity: 0; animation: fadeIn 0.5s ease-in-out forwards">
     <div class="vertical-parallax left-side">
@@ -42,19 +42,22 @@
         <li><a href="/Vig-frontend-demos/MP/">Music Player</a></li>
         <li><a href="/Vig-frontend-demos/PC/">Palindrome Checker</a></li>
         <li><a href="/Vig-frontend-demos/RNC/">Roman Numeral Converter</a></li>
-        <li><a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a></li>
+        <li>
+          <a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a>
+        </li>
         <li><a href="/Vig-frontend-demos/CR/">Cash Register</a></li>
         <li><a href="/Vig-frontend-demos/PS/">Pokemon Search</a></li>
         <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
       </ul>
     </nav>
     <main>
-      <h1>Color Changer</h1>
-      <section class="bg-information-container">
-        <p>Hex Code: <span id="bg-hex-code">#2C2C2E</span></p>
-      </section>
-
-      <button class="btn" id="btn">Change Background Color</button>
+      <h1 class="page-title">Color Changer</h1>
+      <div class="center-content">
+        <section class="bg-information-container">
+          <p>Hex Code: <span id="bg-hex-code">#FFFFFF</span></p>
+        </section>
+        <button class="btn" id="btn">Change Background Color</button>
+      </div>
     </main>
 
     <footer>
@@ -66,8 +69,8 @@
 
     <script>
       // Dropdown Menu Toggle
-      document.querySelector('.menu-toggle').addEventListener('click', () => {
-        document.querySelector('.dropdown-nav').classList.toggle('nav-open');
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".dropdown-nav").classList.toggle("nav-open");
       });
     </script>
   </body>

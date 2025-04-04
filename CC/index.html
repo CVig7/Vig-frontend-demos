@@ -40,19 +40,22 @@
         <li><a href="/Vig-frontend-demos/MP/">Music Player</a></li>
         <li><a href="/Vig-frontend-demos/PC/">Palindrome Checker</a></li>
         <li><a href="/Vig-frontend-demos/RNC/">Roman Numeral Converter</a></li>
-        <li><a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a></li>
+        <li>
+          <a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a>
+        </li>
         <li><a href="/Vig-frontend-demos/CR/">Cash Register</a></li>
         <li><a href="/Vig-frontend-demos/PS/">Pokemon Search</a></li>
         <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
       </ul>
     </nav>
     <main>
-      <h1>Color Changer</h1>
-      <section class="bg-information-container">
-        <p>Hex Code: <span id="bg-hex-code">#2C2C2E</span></p>
-      </section>
-
-      <button class="btn" id="btn">Change Background Color</button>
+      <h1 class="page-title">Color Changer</h1>
+      <div class="center-content">
+        <section class="bg-information-container">
+          <p>Hex Code: <span id="bg-hex-code">#FFFFFF</span></p>
+        </section>
+        <button class="btn" id="btn">Change Background Color</button>
+      </div>
     </main>
 
     <footer>
@@ -65,8 +68,8 @@
     <script src="./script.js" type="module"></script>
     <script>
       // Dropdown Menu Toggle
-      document.querySelector('.menu-toggle').addEventListener('click', () => {
-        document.querySelector('.dropdown-nav').classList.toggle('nav-open');
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".dropdown-nav").classList.toggle("nav-open");
       });
     </script>
   </body>
