@@ -229,7 +229,7 @@ h1 {
   width: 200%; /* Twice the width for smooth looping */
   height: 100%;
   background-repeat: repeat-x;
-  background-size: cover;
+  background-size: auto 100%;
   animation: scrollLoop 60s linear infinite;
 }
 
