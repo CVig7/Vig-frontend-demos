@@ -96,7 +96,7 @@ class Terrain {
     this.width = 200;
     this.height = getScaledSize(40);
 
-    //strobe ladies and gents
+    //Strobe Light
     this.color = ["blue", "white", "orange"];
     this.currentColorIndex = Math.floor(Math.random() * this.color.length);
     this.framrate = 0;
