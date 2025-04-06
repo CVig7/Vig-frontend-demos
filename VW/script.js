@@ -158,6 +158,8 @@ const terrainSpots = [
 ];
 const terrainList = terrainSpots.map((spot) => new Terrain(spot.x, spot.y));
 
+let heroCanJump = true;
+
 // 🏁 Level Layout: Flags (Checkpoints)
 const flagSpots = [
   { x: 1170, y: getScaledSize(80), z: 1 },
@@ -211,6 +213,16 @@ const animateGame = () => {
       // Land on top
       hero.velocity.y = 0;
       hero.position.y = terrain.position.y - hero.height;
+      heroCanJump = true;
+    } else {
+      const isStandingStillOnTop =
+        hero.position.y + hero.height === terrain.position.y &&
+        hero.position.x + hero.width > terrain.position.x &&
+        hero.position.x < terrain.position.x + terrain.width;
+
+      if (isStandingStillOnTop) {
+        heroCanJump = true;
+      }
     }
 
     const isCollidingHorizontally =
@@ -227,7 +239,25 @@ const animateGame = () => {
         hero.position.x = terrain.position.x + terrain.width;
       }
     }
-  });// End of terrain collision
+    const isBumpingFromBelow =
+      hero.position.y >= terrain.position.y + terrain.height &&
+      nextY <= terrain.position.y + terrain.height &&
+      hero.position.x + hero.width > terrain.position.x &&
+      hero.position.x < terrain.position.x + terrain.width;
+
+    if (isBumpingFromBelow) {
+      hero.velocity.y = 1;
+      hero.position.y = terrain.position.y + terrain.height + 1;
+      heroCanJump = false;
+    }
+  }); // End of terrain collision
+
+  if (
+    hero.position.y + hero.height >= gameCanvas.height &&
+    hero.velocity.y === 0
+  ) {
+    heroCanJump = true;
+  }
   // Enemy collision logic
 
   // Flag collision (checkpoint claim)
@@ -274,7 +304,9 @@ const handleHeroMovement = (inputKey, xSpeed, keyPressed) => {
     case "ArrowUp":
     case " ":
     case "Spacebar":
-      hero.velocity.y -= 8;
+      if (heroCanJump || hero.velocity.y === 0) {
+        hero.velocity.y = -8;
+      }
       break;
     case "ArrowRight":
       userInputs.right.pressed = keyPressed;
