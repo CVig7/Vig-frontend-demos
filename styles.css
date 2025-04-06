@@ -29,6 +29,7 @@ body {
   animation: fadeIn 0.3s ease-in-out forwards; /* fade-in animation on load */
   display: flex;
   flex-direction: column;
+  min-height: 100vh; /* full height of the viewport */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 17px;
   line-height: 1.5;
@@ -96,10 +97,65 @@ nav li {
 }
 
 /* ========== FOOTER STYLES ========== */
-footer {
+.figma-style-footer {
+  background-color: #000;
+  color: #fff;
+  padding: 3rem 1.5rem 4.5rem;
+  text-align: center;
+  font-family: sans-serif;
+  position: relative;
   margin-top: auto;
-  padding: 10px 0 50px;
-  color: var(--black);
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  position: absolute;
+  left: 1.5rem;
+  top: 3rem;
+}
+
+.social-links a {
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.social-links a:hover {
+  background: #444;
+}
+
+.footer-logo {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+.footer-legal {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: #ccc;
+}
+
+.footer-legal a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  text-decoration: underline;
 }
 
 /* ========== FADE IN ANIMATION ========== */
@@ -237,3 +293,5 @@ footer {
 .nav-open .nav-links {
   display: block;
 }
+
+
