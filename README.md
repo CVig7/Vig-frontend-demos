@@ -16,6 +16,10 @@ A Roman Numeral Converter (RNC)
 
 A Telephone Number Validator (TNV)
 
+A Cash Register (CR)
+
+A Pokémon Search (PS)
+
 Viggy's World (VW)
 
 Features
@@ -44,6 +48,12 @@ A simple program that converts numbers 1-1,000 into Roman numerals. Supports inp
 
 A program that checks if a given number matches the format of a valid US phone number using regular expressions.
 
+💰 Cash Register (CR)
+A utility that calculates and returns change for a transaction. It determines the optimal way to provide change using the available currency units.
+
+🔍 Pokémon Search (PS)
+A searchable Pokédex that uses the PokéAPI to let users look up Pokémon by name or ID and view key stats and sprite images.
+
 🌍 Viggy’s World (VW)
 
 A vibrant platformer and endless runner where players jump, dash, and navigate floating platforms to reach golden checkpoints.
@@ -57,6 +67,8 @@ LocalStorage for saving game progress in the RPG
 JavaScript Audio API for the Music Player
 
 Canvas API for Viggy's World
+
+PokéAPI for real-time Pokémon data
 
 Portions of the code for the Random Color Changer, Music Player, and RPG were provided by freeCodeCamp.
 
