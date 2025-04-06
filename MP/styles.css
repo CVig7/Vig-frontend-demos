@@ -8,6 +8,7 @@
   --foreground-color: #2b2b3b; /* Dark foreground color for contrast */
   --highlight-color: #f1be32; /* Bright yellow highlight */
   --black: #000000;
+  --red: #ff0000; /* Bright red for alerts or errors */
 
   /* ----- Typography ----- */
   --root-font-size: 16px;
@@ -402,7 +403,13 @@ nav a:hover {
 }
 
 nav a:active {
-  color: red;
+  color: var(--red);
+}
+
+nav a.active {
+  font-weight: bold;
+  color: var(--red); 
+  text-decoration: underline;
 }
 
 nav ul {

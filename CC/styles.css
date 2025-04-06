@@ -23,6 +23,7 @@
   --white: #ffffff;
   --medium-grey: #2c2c2e;
   --black: #000;
+  --red: #ff0000;
 }
 
 /* ===== Layout Base ===== */
@@ -86,7 +87,13 @@ nav a:hover {
 }
 
 nav a:active {
-  color: red;
+  color: var(--red);
+}
+
+nav a.active {
+  font-weight: bold;
+  color: var(--red); /* or choose a color that stands out */
+  text-decoration: underline;
 }
 
 /* ===== Link Styling in Paragraphs ===== */

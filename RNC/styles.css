@@ -10,6 +10,7 @@
   --white: #fff;
   --medium-grey: #75767b;
   --black: #000; /* Default text and border color */
+  --red: #ff0000; /* Bright red, often used for alerts or errors */
 }
 
 /* ===== Reset and full height layout setup ===== */
@@ -74,9 +75,14 @@ nav a:hover {
 }
 
 nav a:active {
-  color: red; /* Red when clicked */
+  color: var(--red); /* Red when clicked */
 }
 
+nav a.active {
+  font-weight: bold;
+  color: var(--red); /* or choose a color that stands out */
+  text-decoration: underline;
+}
 /* ===== Links in Paragraphs ===== */
 p a {
   color: var(--black);

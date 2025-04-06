@@ -19,6 +19,8 @@
   --light-blue: #3f51b5;
   --white: #fff;
   --medium-grey: #2c2c2e;
+  --black: #000; /* Default text and border color */
+  --red: #ff0000; /* Alert or error color */
 }
 
 /* ===== Page Layout Reset ===== */
@@ -82,7 +84,13 @@ nav a:hover {
 }
 
 nav a:active {
-  color: red;
+  color: var(--red);
+}
+
+nav a.active {
+  font-weight: bold;
+  color: var(--red); /* or choose a color that stands out */
+  text-decoration: underline;
 }
 
 /* ===== Paragraph Links ===== */

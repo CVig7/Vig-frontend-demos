@@ -17,6 +17,7 @@
   --white: #fff;
   --medium-grey: #2c2c2e; /* Used for body background */
   --black: #000; /* Common for text and borders */
+  --red: #ff0000; /* Alert or error color */
 }
 
 /* ===== HTML & Body Layout ===== */
@@ -81,7 +82,13 @@ nav a:hover {
 }
 
 nav a:active {
-  color: red; /* Red on click */
+  color: var(--red); /* Red on click */
+}
+
+nav a.active {
+  font-weight: bold;
+  color: var(--red); /* or choose a color that stands out */
+  text-decoration: underline;
 }
 
 /* ===== Link Styling in Paragraphs ===== */

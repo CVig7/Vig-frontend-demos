@@ -10,6 +10,7 @@
   --white: #fff;
   --medium-grey: #75767b;
   --black: #000;
+  --red: #ff0000; /* Bright red, possibly for alerts or errors */
 }
 
 /* ===== Base Page Setup ===== */
@@ -69,6 +70,11 @@ nav a {
   color: var(--black);
 }
 
+nav a.active {
+  font-weight: bold;
+  color: var(--red); /* Highlight active link */
+  text-decoration: underline;
+}
 nav a:hover {
   color: #f4a261; /* Change on hover */
 }
@@ -123,7 +129,7 @@ input[type="number"] {
   justify-content: center;
 }
 #change-due {
-  color: var(--black); 
+  color: var(--black);
 }
 
 /* ===== Button Styling ===== */
@@ -231,7 +237,7 @@ footer {
   top: 1rem;
   left: 1rem;
   z-index: 100; /* stay above parallax background */
-  width : 200px; /* fixed width for dropdown */
+  width: 200px; /* fixed width for dropdown */
 }
 
 /* The hamburger toggle button */

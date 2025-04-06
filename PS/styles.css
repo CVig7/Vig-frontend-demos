@@ -11,6 +11,7 @@
   --medium-grey: #75767b;
   --text-color: #ffffff; /* Light text, for use on dark backgrounds */
   --black: #000; /* Default text or border color */
+  --red: #ff0000; /* Bright red, often used for alerts or errors */
 }
 
 /* ===== Page Reset and Fullscreen Setup ===== */
@@ -75,7 +76,13 @@ nav a:hover {
 }
 
 nav a:active {
-  color: red; /* Red color when clicked */
+  color: var(--red); /* Red color when clicked */
+}
+
+nav a.active {
+  font-weight: bold;
+  color: var(--red); /* or choose a color that stands out */
+  text-decoration: underline;
 }
 
 /* ===== Link Styling for Paragraphs ===== */

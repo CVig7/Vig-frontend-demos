@@ -10,6 +10,7 @@
   --white: #fff;
   --medium-grey: #75767b;
   --black: #000; /* Default text or border color */
+  --red: #ff0000; /* Alert/error color */
 }
 
 /* ===== Page Setup: Full viewport and scroll disabled ===== */
@@ -74,7 +75,13 @@ nav a:hover {
 }
 
 nav a:active {
-  color: red; /* Active/clicked color */
+  color: var(--red); /* Active/clicked color */
+}
+
+nav a.active {
+  font-weight: bold;
+  color: var(--red); /* or choose a color that stands out */
+  text-decoration: underline;
 }
 
 /* ===== Link Styling Inside Paragraphs ===== */
