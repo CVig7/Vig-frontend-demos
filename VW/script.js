@@ -196,27 +196,39 @@ const animateGame = () => {
 
   // Platform collision logic
   terrainList.forEach((terrain) => {
-    const conditionsAbove = [
-      hero.position.y + hero.height <= terrain.position.y,
-      hero.position.y + hero.height + hero.velocity.y >= terrain.position.y,
-      hero.position.x >= terrain.position.x - hero.width / 2,
-      hero.position.x <= terrain.position.x + terrain.width - hero.width / 3,
-    ];
-    if (conditionsAbove.every(Boolean)) {
+    // Calculate the hero's next vertical position
+    const nextY = hero.position.y + hero.velocity.y;
+    const isFalling = hero.velocity.y >= 0;
+
+    // Check if hero is falling and about to land
+    const willLandOnTop =
+      hero.position.x + hero.width > terrain.position.x &&
+      hero.position.x < terrain.position.x + terrain.width &&
+      hero.position.y + hero.height <= terrain.position.y &&
+      nextY + hero.height >= terrain.position.y;
+
+    if (willLandOnTop) {
+      // Land on top
       hero.velocity.y = 0;
-      return;
+      hero.position.y = terrain.position.y - hero.height;
     }
-    const collisionSides = [
-      hero.position.x >= terrain.position.x - hero.width / 2,
-      hero.position.x <= terrain.position.x + terrain.width - hero.width / 3,
-      hero.position.y + hero.height >= terrain.position.y,
-      hero.position.y <= terrain.position.y + terrain.height,
-    ];
-    if (collisionSides.every(Boolean)) {
-      hero.position.y = terrain.position.y + hero.height;
-      hero.velocity.y = fallAcceleration;
+
+    const isCollidingHorizontally =
+      hero.position.y + hero.height > terrain.position.y &&
+      hero.position.y < terrain.position.y + terrain.height &&
+      hero.position.x + hero.width > terrain.position.x &&
+      hero.position.x < terrain.position.x + terrain.width;
+
+    if (isCollidingHorizontally && !willLandOnTop) {
+      // Push hero out of terrain if intersecting sideways
+      if (hero.position.x < terrain.position.x) {
+        hero.position.x = terrain.position.x - hero.width;
+      } else {
+        hero.position.x = terrain.position.x + terrain.width;
+      }
     }
-  });
+  });// End of terrain collision
+  // Enemy collision logic
 
   // Flag collision (checkpoint claim)
   flags.forEach((flag, idx, flags) => {
