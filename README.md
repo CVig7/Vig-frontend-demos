@@ -49,9 +49,11 @@ A simple program that converts numbers 1-1,000 into Roman numerals. Supports inp
 A program that checks if a given number matches the format of a valid US phone number using regular expressions.
 
 💰 Cash Register (CR)
+
 A utility that calculates and returns change for a transaction. It determines the optimal way to provide change using the available currency units.
 
 🔍 Pokémon Search (PS)
+
 A searchable Pokédex that uses the PokéAPI to let users look up Pokémon by name or ID and view key stats and sprite images.
 
 🌍 Viggy’s World (VW)
