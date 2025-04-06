@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Viggy's World</title>
-    <script type="module" crossorigin src="/Vig-frontend-demos/assets/VW-CYrl89ZU.js"></script>
+    <script type="module" crossorigin src="/Vig-frontend-demos/assets/VW-Dx4BGno1.js"></script>
     <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/modulepreload-polyfill-B5Qt9EMX.js">
     <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/VW-CD6N_OYL.css">
   </head>
@@ -19,7 +19,9 @@
         <li><a href="/Vig-frontend-demos/MP/">Music Player</a></li>
         <li><a href="/Vig-frontend-demos/PC/">Palindrome Checker</a></li>
         <li><a href="/Vig-frontend-demos/RNC/">Roman Numeral Converter</a></li>
-        <li><a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a></li>
+        <li>
+          <a href="/Vig-frontend-demos/TNV/">Telephone Number Validator</a>
+        </li>
         <li><a href="/Vig-frontend-demos/CR/">Cash Register</a></li>
         <li><a href="/Vig-frontend-demos/PS/">Pokemon Search</a></li>
       </ul>
@@ -28,17 +30,26 @@
       <h1 class="game-title">🌍 Welcome to Viggy's World!</h1>
       <style>
         body {
-            
-            text-align: center;
-            opacity: 0;
-            animation: fadeIn 0.3s ease-in-out forwards;  
+          text-align: center;
+          opacity: 0;
+          animation: fadeIn 0.3s ease-in-out forwards;
         }
-    </style>
-      <p class="game-instructions">Get ready to jump, run, and vibe your way through floating platforms and glowing checkpoints! ✨🏃‍♂️</p>
-      <p class="game-instructions">Use your arrow keys to move and hit that spacebar to leap into action! ⬅️➡️⏫</p>
-      <p class="game-instructions">Can you reach the end without falling? Let's find out... 🚀</p>
+      </style>
+      <p class="game-instructions">
+        Navigate floating platforms and avoid getting caught as you sprint
+        toward glowing checkpoints. 🏁
+      </p>
+      <p class="game-instructions">
+        Use the arrow keys to move and press space to jump over danger!
+      </p>
+      <p class="game-instructions">
+        Think fast, move smart, and claim every checkpoint. Good luck! ⚡
+      </p>
+
       <div class="button-holder">
-        <button class="game-button" id="initiate-game-button">Start Game</button>
+        <button class="game-button" id="initiate-game-button">
+          Start Game
+        </button>
       </div>
     </div>
 
@@ -64,18 +75,23 @@
 
     <script>
       // Dropdown Menu Toggle
-      document.querySelector('.menu-toggle').addEventListener('click', () => {
-        document.querySelector('.dropdown-nav').classList.toggle('nav-open');
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".dropdown-nav").classList.toggle("nav-open");
       });
     </script>
-    
+
     <style>
-        @keyframes fadeIn {
-            to { opacity: 1; }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
         }
-        </style>
+      }
+    </style>
   </body>
   <footer>
-    <p>Viggy's World is a beta platformer/endless runner game currently in development by Cord Vigil • 2025</p>
+    <p>
+      Viggy's World is a beta platformer/endless runner game currently in
+      development by Cord Vigil • 2025
+    </p>
   </footer>
 </html>

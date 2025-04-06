@@ -8,6 +8,9 @@ const finalCheckpointScreen = document.querySelector(
 const finalCheckpointText = document.querySelector(
   ".checkpoint-message-screen > p"
 );
+const finalCheckpointTitle = document.querySelector(
+  ".checkpoint-message-screen > h2"
+);
 const context = gameCanvas.getContext("2d");
 
 // 📐 Set canvas size to full window
@@ -68,23 +71,35 @@ class Hero {
 class Enemy {
   constructor(x, y) {
     this.position = { x, y };
+    this.velocity = { x: 0, y: 0 };
     this.width = getScaledSize(40);
     this.height = getScaledSize(40);
     this.color = "red";
     this.speed = 1.0;
   }
+
   draw() {
     context.fillStyle = this.color;
     context.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
+
   update(targetX, targetY) {
+    // Movement toward the player (X only for now)
     const dx = targetX - this.position.x;
-    const dy = targetY - this.position.y;
-    const distance = Math.hypot(dx, dy);
+    const distance = Math.abs(dx);
     if (distance > 1) {
-      this.position.x += (dx / distance) * this.speed;
-      this.position.y += (dy / distance) * this.speed;
+      this.velocity.x = (dx / distance) * this.speed;
+    } else {
+      this.velocity.x = 0;
     }
+
+    // Gravity
+    this.velocity.y += fallAcceleration;
+
+    // Apply velocity
+    this.position.x += this.velocity.x;
+    this.position.y += this.velocity.y;
+
     this.draw();
   }
 }
@@ -129,7 +144,7 @@ class Flag {
 
 // 🛠️ Object Instances
 const hero = new Hero();
-const enemy = new Enemy(1000, getScaledSize(300));
+const enemy = new Enemy(1400, gameCanvas.height - getScaledSize(40));
 
 // 🧱 Level Layout: Terrain Blocks
 const terrainSpots = [
@@ -241,14 +256,72 @@ const animateGame = () => {
       heroCanJump = false;
     }
   }); // End of terrain collision
-
+  //Hero floor
   if (
     hero.position.y + hero.height >= gameCanvas.height &&
     hero.velocity.y === 0
   ) {
     heroCanJump = true;
   }
+  //Enemy floor
+  if (enemy.position.y + enemy.height >= gameCanvas.height) {
+    enemy.velocity.y = 0;
+    enemy.position.y = gameCanvas.height - enemy.height;
+  }
   // Enemy collision logic
+  terrainList.forEach((terrain) => {
+    const nextY = enemy.position.y + enemy.velocity.y;
+    const willEnemyLand =
+      enemy.position.x + enemy.width > terrain.position.x &&
+      enemy.position.x < terrain.position.x + terrain.width &&
+      enemy.position.y + enemy.height <= terrain.position.y &&
+      nextY + enemy.height >= terrain.position.y;
+
+    if (willEnemyLand) {
+      enemy.velocity.y = 0;
+      enemy.position.y = terrain.position.y - enemy.height;
+    }
+
+    const enemyHitsSide =
+      enemy.position.y + enemy.height > terrain.position.y &&
+      enemy.position.y < terrain.position.y + terrain.height &&
+      enemy.position.x + enemy.width > terrain.position.x &&
+      enemy.position.x < terrain.position.x + terrain.width;
+
+    if (enemyHitsSide && !willEnemyLand) {
+      if (enemy.position.x < terrain.position.x) {
+        enemy.position.x = terrain.position.x - enemy.width;
+      } else {
+        enemy.position.x = terrain.position.x + terrain.width;
+      }
+    }
+
+    const enemyBumpsFromBelow =
+      enemy.position.y >= terrain.position.y + terrain.height &&
+      nextY <= terrain.position.y + terrain.height &&
+      enemy.position.x + enemy.width > terrain.position.x &&
+      enemy.position.x < terrain.position.x + terrain.width;
+
+    if (enemyBumpsFromBelow) {
+      enemy.velocity.y = 1;
+      enemy.position.y = terrain.position.y + terrain.height + 1;
+    }
+  });
+
+  // Hero-enemy collision
+  const isHeroCollidingWithEnemy =
+    hero.position.x < enemy.position.x + enemy.width &&
+    hero.position.x + hero.width > enemy.position.x &&
+    hero.position.y < enemy.position.y + enemy.height &&
+    hero.position.y + hero.height > enemy.position.y;
+
+  if (isHeroCollidingWithEnemy) {
+    // You can add game over logic, life reduction, or knockback here
+    showCheckpointNotice("You've been caught!", "Game Over!");
+    checkpointDetectionActive = false;
+    hero.velocity.x = 0;
+    hero.velocity.y = 0;
+  }
 
   // Flag collision (checkpoint claim)
   flags.forEach((flag, idx, flags) => {
@@ -265,7 +338,7 @@ const animateGame = () => {
       flag.claim();
       if (idx === flags.length - 1) {
         checkpointDetectionActive = false;
-        showCheckpointNotice("Your on 🔥!");
+        showCheckpointNotice("You have reached the last checkpoint!🔥", "BOOM-SHACKA-LAKA!");
         handleHeroMovement("ArrowRight", 0, false);
       }
     }
@@ -313,16 +386,18 @@ const startGame = () => {
   animateGame();
 };
 
-// ✨ Show Checkpoint Message
-const showCheckpointNotice = (message) => {
+// Show Checkpoint Message
+const showCheckpointNotice = (message, title = "Checkpoint!") => {
   finalCheckpointScreen.style.display = "block";
+  finalCheckpointTitle.textContent = title; 
   finalCheckpointText.textContent = message;
+
   if (checkpointDetectionActive) {
     setTimeout(() => (finalCheckpointScreen.style.display = "none"), 2000);
   }
 };
 
-// 🧩 Event Listeners
+// Event Listeners
 initiateButton.addEventListener("click", startGame);
 window.addEventListener("keydown", ({ key }) => {
   handleHeroMovement(key, 8, true);
