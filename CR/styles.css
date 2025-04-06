@@ -231,6 +231,7 @@ footer {
   top: 1rem;
   left: 1rem;
   z-index: 100; /* stay above parallax background */
+  width : 200px; /* fixed width for dropdown */
 }
 
 /* The hamburger toggle button */

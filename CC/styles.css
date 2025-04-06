@@ -248,6 +248,7 @@ footer {
   position: absolute; /* floats at the top-left of the screen */
   top: 1rem;
   left: 1rem;
+  width: 200px;
   z-index: 100; /* stay above parallax background */
 }
 

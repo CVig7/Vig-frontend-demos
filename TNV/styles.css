@@ -226,6 +226,7 @@ footer {
   position: absolute; /* floats at the top-left of the screen */
   top: 1rem;
   left: 1rem;
+  width: 200px; /* fixed width for dropdown */;
   z-index: 100; /* stay above parallax background */
 }
 

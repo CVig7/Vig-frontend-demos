@@ -247,6 +247,7 @@ button {
   position: absolute; /* floats at the top-left of the screen */
   top: 1rem;
   left: 1rem;
+  width: 200px; /* Fixed width for the dropdown */
   z-index: 100; /* stay above parallax background */
 }
 
