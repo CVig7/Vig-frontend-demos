@@ -102,18 +102,8 @@ class Terrain {
     this.framrate = 0;
   }
   draw() {
-    this.framrate++;
-    if (this.framrate % 10 === 0) {
-      this.currentColorIndex = (this.currentColorIndex + 1) % this.color.length;
-    }
-    context.fillStyle = this.color[this.currentColorIndex];
-    context.fillRect(
-      this.position.x,
-      this.position.y,
-      this.width,
-      this.height,
-      this.color
-    );
+    context.fillStyle = "blue";
+    context.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
 }
 
@@ -126,7 +116,7 @@ class Flag {
     this.claimed = false;
   }
   draw() {
-    context.fillStyle = "#f1be32";
+    context.fillStyle = "gold";
     context.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
   claim() {
