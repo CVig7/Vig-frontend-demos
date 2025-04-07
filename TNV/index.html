@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Telephone Number Validator</title>
 
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="../global/styles.css" />
 
     <style>
       body {
@@ -33,7 +33,7 @@
       <button class="menu-toggle">☰ Menu</button>
       <ul class="nav-links">
         <li><a href="/Vig-frontend-demos/">Home</a></li>
-        
+
         <li><a href="/Vig-frontend-demos/PC/">Palindrome Checker</a></li>
         <li><a href="/Vig-frontend-demos/RNC/">Roman Numeral Converter</a></li>
         <li>
@@ -48,9 +48,16 @@
     </nav>
 
     <main>
-      <h1>Telephone Number Validator</h1>
+      <header>
+        <h1>Telephone Number Validator</h1>
+      </header>
+
       <form>
-        <input id="user-input" type="text" />
+        <input
+          id="user-input"
+          type="text"
+          placeholder="Enter Telephone Number"
+        />
         <div class="button-row">
           <button id="check-btn">Check</button>
           <button id="clear-btn">Clear</button>
