@@ -28,7 +28,12 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  position: static; /* Fixes the body to the viewport */
+  top: 0; /* Aligns the body to the top of the viewport */
+  left: 0; /* Aligns the body to the left of the viewport */
+  width: 100vw; /* Ensures the body takes the full width of the viewport */
 }
 
 body {
@@ -58,16 +63,23 @@ header {
 }
 
 main {
-  flex: 1 0 auto; /* Fills available vertical space */
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  padding-top: 40px;
+  padding-inline: 20px;
+  text-align: center;
+  overflow-y: auto; 
+  width: 100%;
+  height: 100vh; 
 }
 /* ========== HEADINGS ========== */
 h1 {
   color: var(--black);
   font-size: 2em;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Brush Script MT", cursive;
   margin-bottom: auto;
   text-align: center;
 }
@@ -168,7 +180,7 @@ button:hover {
 .figma-style-footer {
   background-color: #000;
   color: #fff;
-  padding: 3rem 1.5rem 4.5rem;
+  padding: 3rem 1.5rem 3.5rem;
   text-align: center;
   font-family: sans-serif;
   position: relative;
@@ -439,4 +451,17 @@ button:hover {
   .checkpoint-message-screen {
     max-width: 300px;
   }
+}
+
+/* ========== SCROLL BAR ========== */
+
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: var(--white);
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.25s ease;
 }

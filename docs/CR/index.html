@@ -18,11 +18,12 @@
         }
       }
     </style>
-    <script type="module" crossorigin src="/Vig-frontend-demos/assets/CR-DGCg3VTX.js"></script>
-    <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/styles-BDVpRq4S.js">
-    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/styles-BCnPnPLz.css">
+    <script type="module" crossorigin src="/Vig-frontend-demos/assets/CR-Bso8SfM4.js"></script>
+    <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/styles-BZSrQvHl.js">
+    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/styles-BnE8ry_1.css">
   </head>
   <body>
+    <div id="scroll-progress-bar"></div>
     <div class="parallax-bg">
       <div class="layer layer10"></div>
       <div class="layer layer9"></div>
@@ -52,8 +53,13 @@
         <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
       </ul>
     </nav>
+    
     <main>
-      <h1>Cash Register</h1>
+      
+      <header>
+        <h1>Cash Register</h1>
+      </header>
+      
       <form>
         <input id="cash" type="number" placeholder="Enter cash amount" />
         <div id="change-due"></div>
@@ -61,18 +67,36 @@
       </form>
     </main>
 
-    <footer>
-      <p>
-        The Cash Register Application is a certification program put together by
-        Cord Vigil on
-        <a href="https://www.freecodecamp.org/learn">freecodecamp</a>
-      </p>
+    <footer class="figma-style-footer">
+      <div class="social-links">
+        <a href="https://x.com/CVIG77" target="_blank">X</a>
+        <a href="https://www.linkedin.com/in/cordero-vigil-271910359/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/c.vig35/" target="_blank">Instagram</a>
+        <a href="https://www.freecodecamp.org/CVig7" target="_blank">FreeCodeCamp</a>
+      </div>
+    
+      <div class="footer-logo">VIG WORLD</div>
+    
+      <div class="footer-legal">
+        <span>© Cord Vigil 2025</span>
+        <span>All rights reserved</span>
     </footer>
 
     <script>
       // Dropdown Menu Toggle
       document.querySelector(".menu-toggle").addEventListener("click", () => {
         document.querySelector(".dropdown-nav").classList.toggle("nav-open");
+      });
+    </script>
+    <script>
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
+        const progressBar = document.getElementById('scroll-progress-bar');
+        if (progressBar) {
+          progressBar.style.width = scrolled + '%';
+        }
       });
     </script>
   </body>

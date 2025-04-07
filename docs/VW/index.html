@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Viggy's World</title>
-    <script type="module" crossorigin src="/Vig-frontend-demos/assets/VW-HsPQQGI7.js"></script>
-    <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/styles-BDVpRq4S.js">
-    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/styles-BCnPnPLz.css">
+    <script type="module" crossorigin src="/Vig-frontend-demos/assets/VW-QhRHMO8Q.js"></script>
+    <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/styles-BZSrQvHl.js">
+    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/styles-BnE8ry_1.css">
   </head>
   <body>
     <nav class="dropdown-nav">
@@ -27,6 +27,7 @@
         </li>
       </ul>
     </nav>
+    <div id="scroll-progress-bar"></div>
     <div class="game-intro-screen">
       <h1 class="game-title">🌍 Welcome to Viggy's World!</h1>
       <style>
@@ -80,6 +81,14 @@
         document.querySelector(".dropdown-nav").classList.toggle("nav-open");
       });
     </script>
+    <script>
+      window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
+        document.getElementById('scroll-progress-bar').style.width = scrolled + '%';
+      });
+    </script>
 
     <style>
       @keyframes fadeIn {
@@ -89,10 +98,18 @@
       }
     </style>
   </body>
-  <footer>
-    <p>
-      Viggy's World is a beta platformer/endless runner game currently in
-      development by Cord Vigil • 2025
-    </p>
+  <footer class="figma-style-footer">
+    <div class="social-links">
+      <a href="https://x.com/CVIG77" target="_blank">X</a>
+      <a href="https://www.linkedin.com/in/cordero-vigil-271910359/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/c.vig35/" target="_blank">Instagram</a>
+      <a href="https://www.freecodecamp.org/CVig7" target="_blank">FreeCodeCamp</a>
+    </div>
+  
+    <div class="footer-logo">VIG WORLD</div>
+  
+    <div class="footer-legal">
+      <span>© Cord Vigil 2025</span>
+      <span>All rights reserved</span>
   </footer>
 </html>

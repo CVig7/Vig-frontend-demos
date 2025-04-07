@@ -19,9 +19,9 @@
         }
       }
     </style>
-    <script type="module" crossorigin src="/Vig-frontend-demos/assets/PS-BO5-rvFL.js"></script>
-    <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/styles-BDVpRq4S.js">
-    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/styles-BCnPnPLz.css">
+    <script type="module" crossorigin src="/Vig-frontend-demos/assets/PS-D-t81Jk8.js"></script>
+    <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/styles-BZSrQvHl.js">
+    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/styles-BnE8ry_1.css">
   </head>
   <body>
     <div class="parallax-bg">
@@ -53,6 +53,7 @@
         <li><a href="/Vig-frontend-demos/VW/">Viggy's World</a></li>
       </ul>
     </nav>
+    <div id="scroll-progress-bar"></div>
     <header>
       <h1>Pokemon Search</h1>
     </header>
@@ -82,18 +83,36 @@
       <div id="sprite-container"></div>
     </main>
 
-    <footer>
-      <p>
-        The Pokemon Search App is a certification project put together by Cord
-        Vigil on
-        <a href="https://www.freecodecamp.org/learn">freecodecamp</a>.
-      </p>
+    <footer class="figma-style-footer">
+      <div class="social-links">
+        <a href="https://x.com/CVIG77" target="_blank">X</a>
+        <a href="https://www.linkedin.com/in/cordero-vigil-271910359/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/c.vig35/" target="_blank">Instagram</a>
+        <a href="https://www.freecodecamp.org/CVig7" target="_blank">FreeCodeCamp</a>
+      </div>
+    
+      <div class="footer-logo">VIG WORLD</div>
+    
+      <div class="footer-legal">
+        <span>© Cord Vigil 2025</span>
+        <span>All rights reserved</span>
     </footer>
 
     <script>
       // Dropdown Menu Toggle
       document.querySelector(".menu-toggle").addEventListener("click", () => {
         document.querySelector(".dropdown-nav").classList.toggle("nav-open");
+      });
+    </script>
+    <script>
+      const main = document.querySelector('main');
+      const progressBar = document.getElementById('scroll-progress-bar');
+    
+      main.addEventListener('scroll', () => {
+        const scrollTop = main.scrollTop;
+        const scrollHeight = main.scrollHeight - main.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
+        progressBar.style.width = `${scrolled}%`;
       });
     </script>
   </body>
