@@ -28,12 +28,9 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
   overflow-y: scroll;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  position: static; /* Fixes the body to the viewport */
-  top: 0; /* Aligns the body to the top of the viewport */
-  left: 0; /* Aligns the body to the left of the viewport */
-  width: 100vw; /* Ensures the body takes the full width of the viewport */
+  
 }
 
 body {
@@ -71,15 +68,15 @@ main {
   padding-top: 40px;
   padding-inline: 20px;
   text-align: center;
-  overflow-y: auto; 
+  overflow-y: auto;
   width: 100%;
-  height: 100vh; 
+  height: 100vh; /* ADJUST TO ENSURE IT CAN SCROLL */
 }
 /* ========== HEADINGS ========== */
 h1 {
   color: var(--black);
   font-size: 2em;
-  font-family: "Brush Script MT", cursive;
+  font-family:'Brush Script MT', cursive;
   margin-bottom: auto;
   text-align: center;
 }
@@ -180,7 +177,7 @@ button:hover {
 .figma-style-footer {
   background-color: #000;
   color: #fff;
-  padding: 3rem 1.5rem 3.5rem;
+  padding: 3rem 1.5rem 4.5rem;
   text-align: center;
   font-family: sans-serif;
   position: relative;
@@ -261,43 +258,43 @@ button:hover {
 }
 
 .layer10 {
-  background-image: url("/Vig-frontend-demos/assets/bg/10_Sky.png");
+  background-image: url("../../assets/bg/10_Sky.png");
   animation-duration: 200s;
 }
 .layer9 {
-  background-image: url("/Vig-frontend-demos/assets/bg/09_Forest.png");
+  background-image: url("../assets/bg/09_Forest.png");
   animation-duration: 160s;
 }
 .layer8 {
-  background-image: url("/Vig-frontend-demos/assets/bg/08_Forest.png");
+  background-image: url("../assets/bg/08_Forest.png");
   animation-duration: 140s;
 }
 .layer7 {
-  background-image: url("/Vig-frontend-demos/assets/bg/07_Trees.png");
+  background-image: url("../assets/bg/07_Trees.png");
   animation-duration: 120s;
 }
 .layer6 {
-  background-image: url("/Vig-frontend-demos/assets/bg/06_Bushes.png");
+  background-image: url("../assets/bg/06_Bushes.png");
   animation-duration: 100s;
 }
 .layer5 {
-  background-image: url("/Vig-frontend-demos/assets/bg/05_Particles.png");
+  background-image: url("../assets/bg/05_Particles.png");
   animation-duration: 80s;
 }
 .layer4 {
-  background-image: url("/Vig-frontend-demos/assets/bg/04_Particles.png");
+  background-image: url("../assets/bg/04_Particles.png");
   animation-duration: 60s;
 }
 .layer3 {
-  background-image: url("/Vig-frontend-demos/assets/bg/03_Particles.png");
+  background-image: url("../assets/bg/03_Particles.png");
   animation-duration: 45s;
 }
 .layer2 {
-  background-image: url("/Vig-frontend-demos/assets/bg/02_Bushes.png");
+  background-image: url("../assets/bg/02_Bushes.png");
   animation-duration: 30s;
 }
 .layer1 {
-  background-image: url("/Vig-frontend-demos/assets/bg/01_Mist.png");
+  background-image: url("../assets/bg/01_Mist.png");
   animation-duration: 20s;
 }
 
@@ -451,17 +448,4 @@ button:hover {
   .checkpoint-message-screen {
     max-width: 300px;
   }
-}
-
-/* ========== SCROLL BAR ========== */
-
-#scroll-progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5px;
-  background: var(--white);
-  width: 0%;
-  z-index: 9999;
-  transition: width 0.25s ease;
 }
