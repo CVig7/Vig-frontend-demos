@@ -45,35 +45,45 @@ body {
   flex-direction: column;
 }
 
-header {
-  padding: 20px;
-  background-color: transparent;
+/* ========== Phase-Up Normal Header ========== */
+
+.phase-header {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 700;
   color: var(--white);
   text-align: center;
-
-  top: 0;
-  z-index: 10;
-  margin-top: 0;
-  top: 0;
+  overflow: hidden;
+  cursor: default;
+  margin-bottom: 2rem;
 }
 
-.header-title {
-  font-family: "Rubik Doodle Shadow", "Bungee", cursive;
-  font-size: 3rem;
-  color: var(--highlight-color);
-  animation: neonGlowHeader 1.5s ease-in-out infinite alternate;
+.phase-header span {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.phase-header::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
   text-align: center;
-  margin-top: 1rem;
+  color: var(--white);
+  transform: translateY(0);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.5;
 }
 
-/* Separate animation for header to allow color change */
-@keyframes neonGlowHeader {
-  from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #f0f, 0 0 20px #f0f, 0 0 40px #f0f;
-  }
-  to {
-    text-shadow: 0 0 10px #fff, 0 0 20px #f0f, 0 0 30px #f0f, 0 0 60px #f0f;
-  }
+.phase-header:hover span {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.phase-header:hover::before {
+  transform: translateY(-100%);
+  opacity: 1;
 }
 
 main {
@@ -245,12 +255,6 @@ button:hover {
   to {
     text-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 60px #0ff;
   }
-}
-
-body.playing .footer-logo,
-body.playing .header-title {
-  animation: none !important;
-  text-shadow: none !important;
 }
 
 .footer-legal {
