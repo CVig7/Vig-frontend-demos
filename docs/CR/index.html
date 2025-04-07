@@ -18,9 +18,9 @@
         }
       }
     </style>
-    <script type="module" crossorigin src="/Vig-frontend-demos/assets/CR-CU2Yy9kb.js"></script>
-    <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/styles-Db5kuKi8.js">
-    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/styles-KCZQ9TVx.css">
+    <script type="module" crossorigin src="/Vig-frontend-demos/assets/CR-CEaSk4hn.js"></script>
+    <link rel="modulepreload" crossorigin href="/Vig-frontend-demos/assets/styles-C_6JWU2V.js">
+    <link rel="stylesheet" crossorigin href="/Vig-frontend-demos/assets/styles-zpi_Qopn.css">
   </head>
   <body>
     <div id="scroll-progress-bar"></div>
@@ -89,13 +89,14 @@
       });
     </script>
     <script>
-      window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      window.addEventListener("scroll", () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (scrollTop / scrollHeight) * 100;
-        const progressBar = document.getElementById('scroll-progress-bar');
+    
+        const progressBar = document.getElementById("scroll-progress-bar");
         if (progressBar) {
-          progressBar.style.width = scrolled + '%';
+          progressBar.style.height = scrolled + "%";
         }
       });
     </script>

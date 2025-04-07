@@ -28,14 +28,13 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  overflow-y: scroll;
-  
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
   background-color: var(--dark-grey);
-  color: var(--black);
+  color: var(--white);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 17px;
   line-height: 1.5;
@@ -68,15 +67,16 @@ main {
   padding-top: 40px;
   padding-inline: 20px;
   text-align: center;
-  overflow-y: auto;
+  overflow-y: visible;
   width: 100%;
-  height: 100vh; /* ADJUST TO ENSURE IT CAN SCROLL */
+  min-height: 100vh; /* ✅ Allows content to expand naturally */
 }
+
 /* ========== HEADINGS ========== */
 h1 {
-  color: var(--black);
+  color: var(--white);
   font-size: 2em;
-  font-family:'Brush Script MT', cursive;
+  font-family: "Brush Script MT", cursive;
   margin-bottom: auto;
   text-align: center;
 }
@@ -175,7 +175,7 @@ button:hover {
 
 /* ========== FOOTER ========== */
 .figma-style-footer {
-  background-color: #000;
+  background-color: #1a1a1a;
   color: #fff;
   padding: 3rem 1.5rem 4.5rem;
   text-align: center;
@@ -449,3 +449,21 @@ button:hover {
     max-width: 300px;
   }
 }
+
+/* ========== Scroll Bar ========== */
+
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 0%;
+  background-color: white;
+  box-shadow:
+    0 0 6px 2px white,
+    0 0 12px 6px #a2e4f3;
+  z-index: 999999;
+  pointer-events: none;
+  transition: height 0.2s ease-out;
+}
+

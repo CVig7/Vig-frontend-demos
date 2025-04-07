@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
   </head>
-  <body style="opacity: 0; animation: fadeIn 0.5s ease-in-out forwards">
+  <body style="animation: fadeIn 0.5s ease-in-out forwards">
+    <div id="scroll-progress-bar"></div>
     <div class="parallax-bg">
       <div class="layer layer10"></div>
       <div class="layer layer9"></div>
@@ -65,6 +66,18 @@
       import _ from "lodash";
       document.querySelector(".menu-toggle").addEventListener("click", () => {
         document.querySelector(".dropdown-nav").classList.toggle("nav-open");
+      });
+    </script>
+    <script>
+      window.addEventListener("scroll", () => {
+        const scrollTop = document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / scrollHeight) * 100;
+    
+        const bar = document.getElementById("scroll-progress-bar");
+        if (bar) {
+          bar.style.width = scrollPercent + "%";
+        }
       });
     </script>
   </body>
