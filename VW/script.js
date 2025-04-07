@@ -12,7 +12,10 @@ const finalCheckpointTitle = document.querySelector(
   ".checkpoint-message-screen > h2"
 );
 const context = gameCanvas.getContext("2d");
-
+let lastFrameTime = performance.now();
+let frameCount = 0;
+let fps = 0;
+let previousTimestamp = performance.now();
 // 📐 Set canvas size to full window
 gameCanvas.width = innerWidth;
 gameCanvas.height = innerHeight;
@@ -175,6 +178,17 @@ const flags = flagSpots.map((point) => new Flag(point.x, point.y, point.z));
 
 // 🎮 Main Game Loop
 const animateGame = () => {
+  const now = performance.now();
+  const delta = now - lastFrameTime;
+  frameCount++;
+
+  if (delta >= 1000) {
+    fps = frameCount;
+    frameCount = 0;
+    lastFrameTime = now;
+    console.log(`FPS: ${fps}`);
+  }
+
   requestAnimationFrame(animateGame);
   context.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
 
@@ -338,7 +352,10 @@ const animateGame = () => {
       flag.claim();
       if (idx === flags.length - 1) {
         checkpointDetectionActive = false;
-        showCheckpointNotice("You have reached the last checkpoint!🔥", "BOOM-SHACKA-LAKA!");
+        showCheckpointNotice(
+          "You have reached the last checkpoint!🔥",
+          "BOOM-SHACKA-LAKA!"
+        );
         handleHeroMovement("ArrowRight", 0, false);
       }
     }
@@ -389,7 +406,7 @@ const startGame = () => {
 // Show Checkpoint Message
 const showCheckpointNotice = (message, title = "Checkpoint!") => {
   finalCheckpointScreen.style.display = "block";
-  finalCheckpointTitle.textContent = title; 
+  finalCheckpointTitle.textContent = title;
   finalCheckpointText.textContent = message;
 
   if (checkpointDetectionActive) {

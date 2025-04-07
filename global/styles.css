@@ -82,7 +82,7 @@ h1 {
 }
 
 .header-title {
-  font-family: "Rubik Doodle Shadow", "Bungee", cursive;
+  font-family: 'Rubik Doodle Shadow', 'Bungee', cursive;
   font-size: 3rem;
   color: var(--highlight-color);
   animation: neonGlowHeader 1.5s ease-in-out infinite alternate;
@@ -99,6 +99,7 @@ h1 {
     text-shadow: 0 0 10px #fff, 0 0 20px #f0f, 0 0 30px #f0f, 0 0 60px #f0f;
   }
 }
+
 
 /* ========== NAVIGATION ========== */
 nav {
@@ -228,7 +229,7 @@ button:hover {
 }
 
 .footer-logo {
-  font-family: "Rubik Doodle Shadow", "Bungee", sans-serif;
+  font-family: 'Rubik Doodle Shadow', 'Bungee', sans-serif;
   font-size: 4rem;
   font-weight: 800;
   letter-spacing: 0.1rem;
@@ -491,8 +492,11 @@ button:hover {
   width: 6px;
   height: 0%;
   background-color: white;
-  box-shadow: 0 0 6px 2px white, 0 0 12px 6px #a2e4f3;
+  box-shadow:
+    0 0 6px 2px white,
+    0 0 12px 6px #a2e4f3;
   z-index: 999999;
   pointer-events: none;
   transition: height 0.2s ease-out;
 }
+

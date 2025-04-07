@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <div id="scroll-progress-bar"></div>
+    
     <nav class="dropdown-nav">
       <button class="menu-toggle">☰ Menu</button>
       <ul class="nav-links">
@@ -27,16 +27,10 @@
         </li>
       </ul>
     </nav>
-    
+    <div id="scroll-progress-bar"></div>
     <div class="game-intro-screen">
       <h1 class="game-title">🌍 Welcome to Viggy's World!</h1>
-      <style>
-        body {
-          text-align: center;
-          opacity: 0;
-          animation: fadeIn 0.3s ease-in-out forwards;
-        }
-      </style>
+      
       <p class="game-instructions">
         Navigate floating platforms and avoid getting caught as you sprint
         toward glowing checkpoints. 🏁
@@ -60,7 +54,7 @@
       <p>You have reached the last checkpoint!🔥</p>
     </div>
 
-    <div class="parallax-bg">
+    <div class="parallax-bg" id="parallax-bg">
       <div class="layer layer10"></div>
       <div class="layer layer9"></div>
       <div class="layer layer8"></div>
@@ -82,14 +76,7 @@
         document.querySelector(".dropdown-nav").classList.toggle("nav-open");
       });
     </script>
-    <script>
-      window.addEventListener('scroll', () => {
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (scrollTop / scrollHeight) * 100;
-        document.getElementById('scroll-progress-bar').style.width = scrolled + '%';
-      });
-    </script>
+    
 
     <style>
       @keyframes fadeIn {
