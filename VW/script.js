@@ -176,6 +176,7 @@ const flagSpots = [
 ];
 const flags = flagSpots.map((point) => new Flag(point.x, point.y, point.z));
 
+document.body.classList.add("playing");
 // 🎮 Main Game Loop
 const animateGame = () => {
   const now = performance.now();
@@ -419,6 +420,7 @@ initiateButton.addEventListener("click", startGame);
 window.addEventListener("keydown", ({ key }) => {
   handleHeroMovement(key, 8, true);
 });
+
 window.addEventListener("keyup", ({ key }) => {
   handleHeroMovement(key, 0, false);
 });
