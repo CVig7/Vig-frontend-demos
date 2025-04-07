@@ -276,6 +276,19 @@ button:hover {
   text-decoration: underline;
 }
 
+body:not(.no-footer-glow) footer a,
+body:not(.no-footer-glow) footer .animated-link,
+body:not(.no-footer-glow) footer .footer-logo {
+  text-shadow: 0 0 6px #fff, 0 0 10px #9cf, 0 0 15px #6ff;
+  transition: text-shadow 0.3s ease;
+}
+
+/* Disable footer glow on VW */
+body.no-footer-glow footer a,
+body.no-footer-glow footer .animated-link,
+body.no-footer-glow footer .footer-logo {
+  text-shadow: none !important;
+}
 /* ========== PARALLAX BACKGROUND ========== */
 .parallax-bg {
   position: fixed;
