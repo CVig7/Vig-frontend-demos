@@ -81,6 +81,25 @@ h1 {
   text-align: center;
 }
 
+.header-title {
+  font-family: "Rubik Doodle Shadow", "Bungee", cursive;
+  font-size: 3rem;
+  color: var(--highlight-color);
+  animation: neonGlowHeader 1.5s ease-in-out infinite alternate;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Separate animation for header to allow color change */
+@keyframes neonGlowHeader {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #f0f, 0 0 20px #f0f, 0 0 40px #f0f;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #f0f, 0 0 30px #f0f, 0 0 60px #f0f;
+  }
+}
+
 /* ========== NAVIGATION ========== */
 nav {
   position: relative;
@@ -209,11 +228,24 @@ button:hover {
 }
 
 .footer-logo {
+  font-family: "Rubik Doodle Shadow", "Bungee", sans-serif;
   font-size: 4rem;
   font-weight: 800;
   letter-spacing: 0.1rem;
   margin-top: 1rem;
   text-transform: uppercase;
+  color: var(--white);
+  animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Glowing animation effect */
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 60px #0ff;
+  }
 }
 
 .footer-legal {
@@ -459,11 +491,8 @@ button:hover {
   width: 6px;
   height: 0%;
   background-color: white;
-  box-shadow:
-    0 0 6px 2px white,
-    0 0 12px 6px #a2e4f3;
+  box-shadow: 0 0 6px 2px white, 0 0 12px 6px #a2e4f3;
   z-index: 999999;
   pointer-events: none;
   transition: height 0.2s ease-out;
 }
-
