@@ -1,6 +1,7 @@
 // 🚀 DOM Element Selection & Setup
 const initiateButton = document.getElementById("initiate-game-button");
 const gameCanvas = document.getElementById("game-canvas");
+const bgMusic = document.getElementById("bg-music");
 const introScreen = document.querySelector(".game-intro-screen");
 const finalCheckpointScreen = document.querySelector(
   ".checkpoint-message-screen"
@@ -401,6 +402,14 @@ const handleHeroMovement = (inputKey, xSpeed, keyPressed) => {
 const startGame = () => {
   gameCanvas.style.display = "block";
   introScreen.style.display = "none";
+
+  //Start background music
+  bgMusic.volume = 0.5; // volume adjustment
+  bgMusic.play().catch((err) => {
+    console.warn("Autoplay failed — user interaction might be required.");
+    console.error(err);
+  });
+
   animateGame();
 };
 
