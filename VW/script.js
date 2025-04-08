@@ -164,6 +164,24 @@ const terrainSpots = [
   { x: 4200, y: getScaledSize(400) },
   { x: 4400, y: getScaledSize(200) },
   { x: 4700, y: getScaledSize(150) },
+  { x: 5100, y: getScaledSize(180) },
+  { x: 5500, y: getScaledSize(260) },
+  { x: 5900, y: getScaledSize(300) },
+  { x: 6300, y: getScaledSize(340) },
+  { x: 6600, y: getScaledSize(380) },
+  { x: 7000, y: getScaledSize(350) },
+  { x: 7400, y: getScaledSize(300) },
+  { x: 7800, y: getScaledSize(300) },
+  { x: 8100, y: getScaledSize(280) },
+  { x: 8400, y: getScaledSize(330) },
+  { x: 8700, y: getScaledSize(360) },
+  { x: 9000, y: getScaledSize(400) },
+  { x: 9300, y: getScaledSize(420) },
+  { x: 9600, y: getScaledSize(300) },
+  { x: 9900, y: getScaledSize(280) },
+  { x: 10200, y: getScaledSize(260) },
+  { x: 10500, y: getScaledSize(240) },
+  { x: 10800, y: getScaledSize(300) },
 ];
 const terrainList = terrainSpots.map((spot) => new Terrain(spot.x, spot.y));
 
@@ -173,7 +191,13 @@ let heroCanJump = true;
 const flagSpots = [
   { x: 1170, y: getScaledSize(80), z: 1 },
   { x: 2900, y: getScaledSize(330), z: 2 },
-  { x: 4800, y: getScaledSize(80), z: 3 },
+  { x: 4700, y: getScaledSize(80), z: 3 },
+  { x: 5500, y: getScaledSize(190), z: 4 },
+  { x: 7000, y: getScaledSize(280), z: 5 },
+  { x: 7800, y: getScaledSize(230), z: 6 },
+  { x: 8700, y: getScaledSize(290), z: 7 },
+  { x: 9600, y: getScaledSize(230), z: 8 },
+  { x: 10500, y: getScaledSize(170), z: 9 },  
 ];
 const flags = flagSpots.map((point) => new Flag(point.x, point.y, point.z));
 

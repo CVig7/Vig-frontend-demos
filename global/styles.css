@@ -291,13 +291,14 @@ body.no-footer-glow footer .footer-logo {
 }
 /* ========== PARALLAX BACKGROUND ========== */
 .parallax-bg {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
   z-index: -1;
+  pointer-events: none;
 }
 
 .layer {
@@ -309,6 +310,7 @@ body.no-footer-glow footer .footer-logo {
   background-repeat: repeat-x;
   background-size: auto 100%;
   animation: scrollLoop 60s linear infinite;
+
 }
 
 .layer10 {
@@ -506,15 +508,14 @@ body.no-footer-glow footer .footer-logo {
 
 /* ========== Scroll Bar ========== */
 
-#scroll-progress-bar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 6px;
-  height: 0%;
-  background-color: white;
-  box-shadow: 0 0 6px 2px white, 0 0 12px 6px #a2e4f3;
-  z-index: 999999;
-  pointer-events: none;
-  transition: height 0.2s ease-out;
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--white);
+  z-index: 1000;
+  
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--golden-yellow);
+  border-radius: 20px;
+  border: 2px solid var(--dark-purple);
 }
