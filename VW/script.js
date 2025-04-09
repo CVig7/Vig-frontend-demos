@@ -197,7 +197,7 @@ let heroCanJump = true;
 
 // 🏁 Level Layout: Flags (Checkpoints)
 const flagSpots = [
-  //{ x: 1170, y: getScaledSize(80), z: 1 },
+  { x: 1170, y: getScaledSize(80), z: 1 },
   { x: 2900, y: getScaledSize(330), z: 2 },
   { x: 4700, y: getScaledSize(80), z: 3 },
   { x: 5500, y: getScaledSize(190), z: 4 },
