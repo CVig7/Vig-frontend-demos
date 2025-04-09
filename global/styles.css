@@ -244,18 +244,18 @@ button:hover {
   margin-top: 1rem;
   text-transform: uppercase;
   color: var(--white);
-  animation: neonGlow 1.5s ease-in-out infinite alternate;
+
 }
 
 /* Glowing animation effect */
-@keyframes neonGlow {
+/*@keyframes neonGlow {
   from {
     text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
   }
   to {
     text-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 60px #0ff;
   }
-}
+}*/
 
 .footer-legal {
   display: flex;
@@ -276,19 +276,19 @@ button:hover {
   text-decoration: underline;
 }
 
-body:not(.no-footer-glow) footer a,
+/*body:not(.no-footer-glow) footer a,
 body:not(.no-footer-glow) footer .animated-link,
 body:not(.no-footer-glow) footer .footer-logo {
   text-shadow: 0 0 6px #fff, 0 0 10px #9cf, 0 0 15px #6ff;
   transition: text-shadow 0.3s ease;
-}
+}*/
 
 /* Disable footer glow on VW */
-body.no-footer-glow footer a,
+/*body.no-footer-glow footer a,
 body.no-footer-glow footer .animated-link,
 body.no-footer-glow footer .footer-logo {
   text-shadow: none !important;
-}
+}*/
 /* ========== PARALLAX BACKGROUND ========== */
 .parallax-bg {
   position: absolute;
