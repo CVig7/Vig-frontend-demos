@@ -17,6 +17,7 @@ let lastFrameTime = performance.now();
 let frameCount = 0;
 let fps = 0;
 let previousTimestamp = performance.now();
+let cameraOffsetX = 0;
 // 📐 Set canvas size to full window
 gameCanvas.width = innerWidth;
 gameCanvas.height = innerHeight;
@@ -81,6 +82,7 @@ class Enemy {
     this.height = getScaledSize(40);
     this.color = "red";
     this.speed = 1.0;
+    this.canJump = false; // new
   }
 
   draw() {
@@ -88,8 +90,14 @@ class Enemy {
     context.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
 
+  jump() {
+    if (this.canJump) {
+      this.velocity.y = -25; // match hero
+      this.canJump = false;
+    }
+  }
+
   update(targetX, targetY) {
-    // Movement toward the player (X only for now)
     const dx = targetX - this.position.x;
     const distance = Math.abs(dx);
     if (distance > 1) {
@@ -98,10 +106,8 @@ class Enemy {
       this.velocity.x = 0;
     }
 
-    // Gravity
     this.velocity.y += fallAcceleration;
 
-    // Apply velocity
     this.position.x += this.velocity.x;
     this.position.y += this.velocity.y;
 
@@ -153,10 +159,10 @@ const enemy = new Enemy(1400, gameCanvas.height - getScaledSize(40));
 
 // 🧱 Level Layout: Terrain Blocks
 const terrainSpots = [
-  { x: 500, y: getScaledSize(450) },
-  { x: 700, y: getScaledSize(400) },
-  { x: 850, y: getScaledSize(350) },
-  { x: 900, y: getScaledSize(350) },
+  //{ x: 500, y: getScaledSize(450) },
+  //{ x: 700, y: getScaledSize(400) },
+  //{ x: 850, y: getScaledSize(350) },
+  //{ x: 900, y: getScaledSize(350) },
   { x: 1050, y: getScaledSize(150) },
   { x: 2500, y: getScaledSize(450) },
   { x: 2900, y: getScaledSize(400) },
@@ -184,13 +190,14 @@ const terrainSpots = [
   { x: 10500, y: getScaledSize(240) },
   { x: 10800, y: getScaledSize(300) },
 ];
+
 const terrainList = terrainSpots.map((spot) => new Terrain(spot.x, spot.y));
 
 let heroCanJump = true;
 
 // 🏁 Level Layout: Flags (Checkpoints)
 const flagSpots = [
-  { x: 1170, y: getScaledSize(80), z: 1 },
+  //{ x: 1170, y: getScaledSize(80), z: 1 },
   { x: 2900, y: getScaledSize(330), z: 2 },
   { x: 4700, y: getScaledSize(80), z: 3 },
   { x: 5500, y: getScaledSize(190), z: 4 },
@@ -198,11 +205,12 @@ const flagSpots = [
   { x: 7800, y: getScaledSize(230), z: 6 },
   { x: 8700, y: getScaledSize(290), z: 7 },
   { x: 9600, y: getScaledSize(230), z: 8 },
-  { x: 10500, y: getScaledSize(170), z: 9 },  
+  { x: 10500, y: getScaledSize(170), z: 9 },
 ];
 const flags = flagSpots.map((point) => new Flag(point.x, point.y, point.z));
 
 document.body.classList.add("playing");
+
 // 🎮 Main Game Loop
 const animateGame = () => {
   const now = performance.now();
@@ -219,6 +227,35 @@ const animateGame = () => {
   requestAnimationFrame(animateGame);
   context.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
 
+  
+  // Draw smooth downward slope ramp
+  const rampThickness = getScaledSize(40);
+  const xStart = 50; // slight gap before the curve starts
+  const xEnd = 800;
+  const rampOffset = 600; // lowered the ramp on screen
+
+  // Flat starting platform (before curve)
+  const flatLength = 50;
+  context.fillStyle = "blue";
+  const curveStartY = -0.002 * Math.pow(xStart - 400, 2) + rampOffset;
+  context.fillRect(0 + cameraOffsetX, curveStartY, flatLength, rampThickness);
+
+  // Curved ramp
+  context.beginPath();
+  for (let x = xStart; x <= xEnd; x++) {
+    const y = -0.002 * Math.pow(x - 400, 2) + rampOffset;
+    if (x === xStart) context.moveTo(x + cameraOffsetX, y);
+    else context.lineTo(x + cameraOffsetX, y);
+  }
+  for (let x = xEnd; x >= xStart; x--) {
+    const y = -0.002 * Math.pow(x - 400, 2) + rampOffset + rampThickness;
+    context.lineTo(x + cameraOffsetX, y);
+  }
+
+  context.closePath();
+  context.fillStyle = "blue";
+  context.fill();
+
   // Draw game elements
   terrainList.forEach((terrain) => terrain.draw());
   flags.forEach((flag) => flag.draw());
@@ -232,11 +269,14 @@ const animateGame = () => {
     hero.velocity.x = -5;
   } else {
     hero.velocity.x = 0;
+
     // Side-scroll environment
     if (userInputs.right.pressed && checkpointDetectionActive) {
+      cameraOffsetX -= 5; // Scrolls world left
       terrainList.forEach((terrain) => (terrain.position.x -= 5));
       flags.forEach((flag) => (flag.position.x -= 5));
     } else if (userInputs.left.pressed && checkpointDetectionActive) {
+      cameraOffsetX += 5; // Scrolls world right
       terrainList.forEach((terrain) => (terrain.position.x += 5));
       flags.forEach((flag) => (flag.position.x += 5));
     }
@@ -304,11 +344,14 @@ const animateGame = () => {
   ) {
     heroCanJump = true;
   }
+
   //Enemy floor
   if (enemy.position.y + enemy.height >= gameCanvas.height) {
     enemy.velocity.y = 0;
     enemy.position.y = gameCanvas.height - enemy.height;
+    enemy.canJump = true;
   }
+
   // Enemy collision logic
   terrainList.forEach((terrain) => {
     const nextY = enemy.position.y + enemy.velocity.y;
@@ -321,6 +364,7 @@ const animateGame = () => {
     if (willEnemyLand) {
       enemy.velocity.y = 0;
       enemy.position.y = terrain.position.y - enemy.height;
+      enemy.canJump = true;
     }
 
     const enemyHitsSide =
@@ -348,6 +392,10 @@ const animateGame = () => {
       enemy.position.y = terrain.position.y + terrain.height + 1;
     }
   });
+
+  if (hero.position.y + hero.height < enemy.position.y && enemy.canJump) {
+    enemy.jump();
+  } //Trigger the jump if hero is above
 
   // Hero-enemy collision
   const isHeroCollidingWithEnemy =
