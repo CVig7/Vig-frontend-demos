@@ -412,6 +412,7 @@ const handleHeroMovement = (inputKey, xSpeed, keyPressed) => {
     case "Spacebar":
       if (heroCanJump || hero.velocity.y === 0) {
         hero.velocity.y = -8;
+        heroCanJump = false;
       }
       break;
     case "ArrowRight":
