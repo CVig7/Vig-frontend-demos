@@ -40,6 +40,7 @@ class Hero {
     this.width = getScaledSize(40);
     this.height = getScaledSize(40);
     this.color = "black";
+    this.speed = 1.0;
   }
   draw() {
     context.fillStyle = "black";
