@@ -34,7 +34,7 @@ body {
 
 body {
   background-color: var(--dark-grey);
-  color: var(--white);
+  color: var(--black);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 17px;
   line-height: 1.5;
