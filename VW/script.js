@@ -24,6 +24,8 @@ gameCanvas.height = window.innerHeight;
 // ⚙️ Game Constants
 const fallAcceleration = 0.5;
 let checkpointDetectionActive = true;
+let score = 0;
+let maxDistance = 0;
 
 // 🔧 Utility to scale based on window size
 const getScaledSize = (dimension) => {
@@ -40,7 +42,7 @@ class Hero {
     this.width = getScaledSize(40);
     this.height = getScaledSize(40);
     this.color = "black";
-    this.speed = 1.0;
+    this.speed = 5.0;
   }
   draw() {
     context.fillStyle = "black";
@@ -87,6 +89,7 @@ class Enemy {
     context.fillStyle = this.color;
     context.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
+  
 
   update(targetX, targetY) {
     // Movement toward the player (X only for now)
@@ -182,7 +185,6 @@ const terrainSpots = [
   { x: 9900, y: getScaledSize(280) },
   { x: 10200, y: getScaledSize(260) },
   { x: 10500, y: getScaledSize(240) },
-  { x: 10800, y: getScaledSize(300) },
 ];
 const terrainList = terrainSpots.map((spot) => new Terrain(spot.x, spot.y));
 
@@ -198,7 +200,7 @@ const flagSpots = [
   { x: 7800, y: getScaledSize(230), z: 6 },
   { x: 8700, y: getScaledSize(290), z: 7 },
   { x: 9600, y: getScaledSize(230), z: 8 },
-  { x: 10500, y: getScaledSize(170), z: 9 },  
+  { x: 10500, y: getScaledSize(170), z: 9 },
 ];
 const flags = flagSpots.map((point) => new Flag(point.x, point.y, point.z));
 
@@ -218,6 +220,9 @@ const animateGame = () => {
 
   requestAnimationFrame(animateGame);
   context.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
+  context.fillStyle = "black";
+  context.font = "24px Arial";
+  context.fillText("Score: " + score, 30, 50);
 
   // Draw game elements
   terrainList.forEach((terrain) => terrain.draw());
@@ -227,9 +232,9 @@ const animateGame = () => {
 
   // Handle hero movement and side-scrolling
   if (userInputs.right.pressed && hero.position.x < getScaledSize(400)) {
-    hero.velocity.x = 5;
+    hero.velocity.x = hero.speed;
   } else if (userInputs.left.pressed && hero.position.x > getScaledSize(100)) {
-    hero.velocity.x = -5;
+    hero.velocity.x = -hero.speed;
   } else {
     hero.velocity.x = 0;
     // Side-scroll environment
@@ -241,6 +246,11 @@ const animateGame = () => {
       flags.forEach((flag) => (flag.position.x += 5));
     }
   }
+  if (hero.position.x > maxDistance) {
+    maxDistance = hero.position.x;
+    score = Math.floor(maxDistance / 10); // adjust divisor to balance scoring
+  }
+  
 
   // Platform collision logic
   terrainList.forEach((terrain) => {
@@ -384,6 +394,7 @@ const animateGame = () => {
           "BOOM-SHACKA-LAKA!"
         );
         handleHeroMovement("ArrowRight", 0, false);
+        
       }
     }
   });

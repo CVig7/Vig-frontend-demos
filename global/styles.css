@@ -21,6 +21,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  position: relative;
+  z-index: 9999;
 }
 
 html,
@@ -354,14 +356,14 @@ body.no-footer-glow footer .footer-logo {
   animation-duration: 20s;
 }
 
-@keyframes scrollLoop {
+/* @keyframes scrollLoop {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-50%);
   }
-}
+} */
 
 /* ========== FADE IN ANIMATION ========== */
 @keyframes fadeIn {
@@ -481,7 +483,7 @@ body.no-footer-glow footer .footer-logo {
   display: none;
   box-shadow: 0 0 15px rgba(255, 64, 129, 0.4);
   color: var(--highlight-color);
-  z-index: 10;
+  z-index: 9999;
 }
 
 #game-canvas {
@@ -511,11 +513,14 @@ body.no-footer-glow footer .footer-logo {
 ::-webkit-scrollbar {
   width: 10px;
   background-color: var(--white);
-  z-index: 1000;
+  z-index: 9999;
+  position: relative;
   
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--golden-yellow);
   border-radius: 20px;
   border: 2px solid var(--dark-purple);
+  z-index: 9999;
+  position: relative;
 }
