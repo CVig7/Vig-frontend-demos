@@ -22,7 +22,7 @@
   padding: 0;
   box-sizing: border-box;
   position: relative;
-  z-index: 9999;
+  
 }
 
 html,
@@ -524,3 +524,4 @@ body.no-footer-glow footer .footer-logo {
   z-index: 9999;
   position: relative;
 }
+
